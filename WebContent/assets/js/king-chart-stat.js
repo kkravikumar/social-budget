@@ -273,16 +273,11 @@ $(document).ready(function(){
 	/*	DONUT CHART
 	/********************************************/
 
-	if( $('#visit-chart, #demo-donut-chart-category').length > 0 ) {
-		var data = [
-		    { label: "BillPay",  data: 650},
-		    { label: "HomeFurnishings",  data: 604},
-			{ label: "ConsumerElectronics", data: 503},
-			{ label: "Unknown", data: 572},
-			{ label: "Womensapparel", data: 417}
-		];
+	if( $('#demo-donut-chart-category').length > 0 ) {
+		var placeholder=$("#demo-donut-chart-category");
+		var data = top_merchant_donut_chart_data;
 
-		$.plot('#visit-chart, #demo-donut-chart-category', data, {
+		$.plot('#demo-donut-chart-category', data, {
 			series: {
 				pie: {
 					show: true,
@@ -294,7 +289,7 @@ $(document).ready(function(){
 					label: {
 						show: true,
 						radius: 3/4,
-						formatter: donutLabelFormatter
+						formatter: labelFormatter
 					}
 				},
 			},
@@ -302,12 +297,24 @@ $(document).ready(function(){
 				show: false
 			},
 			grid: {
-				hoverable: true
+				hoverable: true,
+				clickable: true
 			},
-			colors: ["#7d939a", "#5399D6", "#d7ea2b", "#7d939a", "#5399D6"],
+			colors: ["#7d939a", "#5399D6", "#d7ea2b"],
 		});
-	}
+		
+		
+		placeholder.bind("plotclick", function(event, pos, obj) {
 
+				if (!obj) {
+					return;
+				}
+
+				placeholder.hide();
+				populateTransactions(placeholder,obj.series.label);
+			});
+	}
+	
 	if( $('#visit-chart, #demo-donut-chart-merchant').length > 0 ) {
 		var data = [
 			{ label: "AtmDeposit",  data: 597},
@@ -1257,5 +1264,26 @@ $(document).ready(function(){
 			}
 		);
 	}
+	function labelFormatter(label, series) {
+		return "<div style='font-size:8pt; text-align:center; padding:2px; color:black;'> " + label + "<br/>" + Math.round(series.percent) + "%</div>";
+	}
+	function populateTransactions(placeholder,labelname)
+	{
+		var rows = "";
+		labelname=labelname.toLowerCase().replace(/ /g, '');
+		var transaction_items=labelname+'_transaction_items';
 
+		for (i = 0; i < valero_transaction_items.length; i++) { 
+			rows += "<tr><td>" + valero_transaction_items[i].TDate + "</td><td>" + valero_transaction_items[i].Description + "</td><td>" + valero_transaction_items[i].Amount + "</td></tr>";
+		}
+
+		$( rows ).appendTo( "#merchantTransactionTable tbody" );
+		$('#merchantTransactionTablediv').show();
+	}
+	
+	 $('#merchantTransactionWidgetHeader h3').on('click', function() {
+       $('#merchantTransactionTablediv').hide();
+	   placeholder.show();
+	   $( "#merchantTransactionTable tbody" ).empty();
+    });
 }); // end ready function
