@@ -315,40 +315,7 @@ $(document).ready(function(){
 			});
 	}
 	
-	if( $('#visit-chart, #demo-donut-chart-merchant').length > 0 ) {
-		var data = [
-			{ label: "AtmDeposit",  data: 597},
-			{ label: "AutomatedDebitCredit",  data: 1780},
-			{ label: "Billpay", data: 650},
-			{ label: "NagLodgingHotels",  data: 129},
-			{ label: "MobileDeposit", data: 810}
-		];
 
-		$.plot('#visit-chart, #demo-donut-chart-merchant', data, {
-			series: {
-				pie: {
-					show: true,
-					innerRadius: .4,
-					stroke: {
-						width: 4,
-						color: "#F9F9F9"
-					},
-					label: {
-						show: true,
-						radius: 3/4,
-						formatter: donutLabelFormatter
-					}
-				},
-			},
-			legend: {
-				show: false
-			},
-			grid: {
-				hoverable: true
-			},
-			colors: ["#d7ea2b", "#5399D6", "#d7ea2b", "#5399D6", "#7d939a"],
-		});
-	}
 	
 	if( $('#investment-donut-chart').length > 0 ) {
 		var data = [
@@ -1286,4 +1253,203 @@ $(document).ready(function(){
 	   placeholder.show();
 	   $( "#merchantTransactionTable tbody" ).empty();
     });
+	
+	
+	var theme = {
+          color: [
+              '#26B99A', '#34495E', '#BDC3C7', '#3498DB',
+              '#9B59B6', '#8abb6f', '#759c6a', '#bfd3b7'
+          ],
+
+          title: {
+              itemGap: 8,
+              textStyle: {
+                  fontWeight: 'normal',
+                  color: '#408829'
+              }
+          },
+
+          dataRange: {
+              color: ['#1f610a', '#97b58d']
+          },
+
+          toolbox: {
+              color: ['#408829', '#408829', '#408829', '#408829']
+          },
+
+          tooltip: {
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              axisPointer: {
+                  type: 'line',
+                  lineStyle: {
+                      color: '#408829',
+                      type: 'dashed'
+                  },
+                  crossStyle: {
+                      color: '#408829'
+                  },
+                  shadowStyle: {
+                      color: 'rgba(200,200,200,0.3)'
+                  }
+              }
+          },
+
+          dataZoom: {
+              dataBackgroundColor: '#eee',
+              fillerColor: 'rgba(64,136,41,0.2)',
+              handleColor: '#408829'
+          },
+          grid: {
+              borderWidth: 0
+          },
+
+          categoryAxis: {
+              axisLine: {
+                  lineStyle: {
+                      color: '#408829'
+                  }
+              },
+              splitLine: {
+                  lineStyle: {
+                      color: ['#eee']
+                  }
+              }
+          },
+
+          valueAxis: {
+              axisLine: {
+                  lineStyle: {
+                      color: '#408829'
+                  }
+              },
+              splitArea: {
+                  show: true,
+                  areaStyle: {
+                      color: ['rgba(250,250,250,0.1)', 'rgba(200,200,200,0.1)']
+                  }
+              },
+              splitLine: {
+                  lineStyle: {
+                      color: ['#eee']
+                  }
+              }
+          },
+          timeline: {
+              lineStyle: {
+                  color: '#408829'
+              },
+              controlStyle: {
+                  normal: {color: '#408829'},
+                  emphasis: {color: '#408829'}
+              }
+          },
+
+          k: {
+              itemStyle: {
+                  normal: {
+                      color: '#68a54a',
+                      color0: '#a9cba2',
+                      lineStyle: {
+                          width: 1,
+                          color: '#408829',
+                          color0: '#86b379'
+                      }
+                  }
+              }
+          },
+        
+          force: {
+              itemStyle: {
+                  normal: {
+                      linkStyle: {
+                          strokeColor: '#408829'
+                      }
+                  }
+              }
+          },
+          chord: {
+              padding: 4,
+              itemStyle: {
+                  normal: {
+                      lineStyle: {
+                          width: 1,
+                          color: 'rgba(128, 128, 128, 0.5)'
+                      },
+                      chordStyle: {
+                          lineStyle: {
+                              width: 1,
+                              color: 'rgba(128, 128, 128, 0.5)'
+                          }
+                      }
+                  },
+                  emphasis: {
+                      lineStyle: {
+                          width: 1,
+                          color: 'rgba(128, 128, 128, 0.5)'
+                      },
+                      chordStyle: {
+                          lineStyle: {
+                              width: 1,
+                              color: 'rgba(128, 128, 128, 0.5)'
+                          }
+                      }
+                  }
+              }
+          },
+  
+          textStyle: {
+              fontFamily: 'Arial, Verdana, sans-serif'
+          }
+      };
+
+      var echartPieCollapse = echarts.init(document.getElementById('echart_pie2'), theme);
+      
+      echartPieCollapse.setOption({
+        tooltip: {
+          trigger: 'item',
+          formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        toolbox: {
+          show: true,
+          feature: {
+            magicType: {
+              show: true,
+              type: ['pie', 'funnel']
+            }
+          }
+        },
+        calculable: true,
+        series: [{
+          name: 'Friend',
+          type: 'pie',
+          radius: [25, 80],
+          center: ['50%', 100],
+          roseType: 'area',
+          x: '50%',
+          max: 40,
+          sort: 'ascending',
+          data: [{
+            value: 22,
+            name: 'David'
+          }, {
+            value: 20,
+            name: 'Rob'
+          }, {
+            value: 23,
+            name: 'Thomas'
+          }, {
+            value: 25,
+            name: 'Harry'
+          }, {
+            value: 20,
+            name: 'Mike'
+          }]
+        }]
+      });
+
+	echartPieCollapse.on('click', function (params) {
+alert(params);
+	});
+
+	  
 }); // end ready function
