@@ -33,8 +33,8 @@ $(document).ready(function(){
 
 	if( $('.sales-chart').length > 0 ) {
 		$placeholder = $('.sales-chart');
-		$placeholder.attr('data-ctype', '#week');
-		chartWeek($placeholder);
+		$placeholder.attr('data-ctype', '#month');
+		chartMonth($placeholder);
 
 		// tabbed chart
 		$('#sales-stat-tab a').click(function(e) {
@@ -46,10 +46,12 @@ $(document).ready(function(){
 			$('#sales-stat-tab li').removeClass('active');
 			$(this).parents('li').addClass('active');
 			
-			if($chartType == '#week') {
-				chartWeek($placeholder);
-			}else if($chartType == '#month') {
+			if($chartType == '#month') {
 				chartMonth($placeholder);
+			}else if($chartType == '#quarter') {
+				chartQuarter($placeholder);
+			}else if($chartType == '#half') {
+				chartHalfYear($placeholder);
 			}else if($chartType == '#year') {
 				chartYear($placeholder);
 			}
@@ -271,14 +273,16 @@ $(document).ready(function(){
 	/*	DONUT CHART
 	/********************************************/
 
-	if( $('#visit-chart, #demo-donut-chart').length > 0 ) {
+	if( $('#visit-chart, #demo-donut-chart-category').length > 0 ) {
 		var data = [
-			{ label: "Direct",  data: 65},
-			{ label: "Referral",  data: 20},
-			{ label: "Others", data: 15}
+		    { label: "BillPay",  data: 650},
+		    { label: "HomeFurnishings",  data: 604},
+			{ label: "ConsumerElectronics", data: 503},
+			{ label: "Unknown", data: 572},
+			{ label: "Womensapparel", data: 417}
 		];
 
-		$.plot('#visit-chart, #demo-donut-chart', data, {
+		$.plot('#visit-chart, #demo-donut-chart-category', data, {
 			series: {
 				pie: {
 					show: true,
@@ -300,10 +304,45 @@ $(document).ready(function(){
 			grid: {
 				hoverable: true
 			},
-			colors: ["#7d939a", "#5399D6", "#d7ea2b"],
+			colors: ["#7d939a", "#5399D6", "#d7ea2b", "#7d939a", "#5399D6"],
 		});
 	}
 
+	if( $('#visit-chart, #demo-donut-chart-merchant').length > 0 ) {
+		var data = [
+			{ label: "AtmDeposit",  data: 597},
+			{ label: "AutomatedDebitCredit",  data: 1780},
+			{ label: "Billpay", data: 650},
+			{ label: "NagLodgingHotels",  data: 129},
+			{ label: "MobileDeposit", data: 810}
+		];
+
+		$.plot('#visit-chart, #demo-donut-chart-merchant', data, {
+			series: {
+				pie: {
+					show: true,
+					innerRadius: .4,
+					stroke: {
+						width: 4,
+						color: "#F9F9F9"
+					},
+					label: {
+						show: true,
+						radius: 3/4,
+						formatter: donutLabelFormatter
+					}
+				},
+			},
+			legend: {
+				show: false
+			},
+			grid: {
+				hoverable: true
+			},
+			colors: ["#d7ea2b", "#5399D6", "#d7ea2b", "#5399D6", "#7d939a"],
+		});
+	}
+	
 	if( $('#investment-donut-chart').length > 0 ) {
 		var data = [
 			{ label: "Stock",  data: 55},
@@ -395,11 +434,11 @@ $(document).ready(function(){
 	function chartWeek(placeholder) {
 
 		var visit = [
-			[gt(2013, 10, 21), 188], [gt(2013, 10, 22), 185], [gt(2013, 10, 23), 250], [gt(2013, 10, 24), 230], [gt(2013, 10, 25), 275], [gt(2013, 10, 26), 190], [gt(2013, 10, 27), 230]
+			[gt(2016, 9, 21), 188], [gt(2016, 9, 22), 185], [gt(2016, 9, 23), 250], [gt(2016, 9, 24), 230], [gt(2016, 9, 25), 275], [gt(2016, 9, 26), 190], [gt(2016, 9, 27), 230]
 		];
 
 		var val = [
-			[gt(2013, 10, 21), 100], [gt(2013, 10, 22),50], [gt(2013, 10, 23),95], [gt(2013, 10, 24),105], [gt(2013, 10, 25),125], [gt(2013, 10, 26),90], [gt(2013, 10, 27),155]
+			[gt(2016, 9, 21), 100], [gt(2016, 9, 22),50], [gt(2016, 9, 23),95], [gt(2016, 9, 24),105], [gt(2016, 9, 25),125], [gt(2016, 9, 26),90], [gt(2016, 9, 27),155]
 		];
 
 		var plot = $.plot(placeholder, 
@@ -481,27 +520,25 @@ $(document).ready(function(){
 	// init flot chart: current month
 	function chartMonth(placeholder) {
 
-		var visit = [
-			[gt(2013, 10, 1), 100], [gt(2013, 10, 2), 140], [gt(2013, 10, 3), 160], [gt(2013, 10, 4),190], [gt(2013, 10, 5),170], [gt(2013, 10, 6), 200], [gt(2013, 10, 7), 220],
-			[gt(2013, 10, 8), 250], [gt(2013, 10, 9),280], [gt(2013, 10, 10), 240], [gt(2013, 10, 11), 250], [gt(2013, 10, 12), 260], [gt(2013, 10, 13), 300], [gt(2013, 10, 14), 320],
-			[gt(2013, 10, 15), 330], [gt(2013, 10, 16), 370], [gt(2013, 10, 17), 390], [gt(2013, 10, 18), 350], [gt(2013, 10, 19), 340], [gt(2013, 10, 20), 320], [gt(2013, 10, 21), 370],
-			[gt(2013, 10, 22), 400], [gt(2013, 10, 23), 440], [gt(2013, 10, 24), 450], [gt(2013, 10, 25), 470], [gt(2013, 10, 26), 450], [gt(2013, 10, 27), 500], [gt(2013, 10, 28), 540],
-			[gt(2013, 10, 29), 600], [gt(2013, 10, 30), 580], [gt(2013, 10, 31), 620]
+		var yours = [
+			[gt(2016, 9, 1), 6.5], [gt(2016, 9, 2), 239.56], [gt(2016, 9, 5), 83.54], [gt(2016, 9, 6), 33.6],
+			[gt(2016, 9, 8), 207.49], [gt(2016, 9, 9),94.5], [gt(2016, 9, 10), 63.7], [gt(2016, 9, 11), 155], [gt(2016, 9, 12), 69.8], [gt(2016, 9, 13), 128.34],
+			[gt(2016, 9, 15), 32.61], [gt(2016, 9, 18), 399.82], [gt(2016, 9, 19), 16.58], [gt(2016, 9, 20), 245.54], [gt(2016, 9, 21), 38.53],
+			[gt(2016, 9, 22), 229.6]
 		];
 
 		var val = [
-			[gt(2013, 10, 1), 20], [gt(2013, 10, 2), 28], [gt(2013, 10, 3), 32], [gt(2013, 10, 4), 40], [gt(2013, 10, 5), 35], [gt(2013, 10, 6), 40], [gt(2013, 10, 7), 45],
-			[gt(2013, 10, 8), 25], [gt(2013, 10, 9), 60], [gt(2013, 10, 10), 48], [gt(2013, 10, 11), 53], [gt(2013, 10, 12), 58], [gt(2013, 10, 13), 60], [gt(2013, 10, 14), 65],
-			[gt(2013, 10, 15), 66], [gt(2013, 10, 16), 60], [gt(2013, 10, 17), 79], [gt(2013, 10, 18), 75], [gt(2013, 10, 19), 34], [gt(2013, 10, 20), 32], [gt(2013, 10, 21), 75],
-			[gt(2013, 10, 22), 88], [gt(2013, 10, 23), 99], [gt(2013, 10, 24), 86], [gt(2013, 10, 25), 83], [gt(2013, 10, 26), 45], [gt(2013, 10, 27), 50], [gt(2013, 10, 28), 100],
-			[gt(2013, 10, 29), 125], [gt(2013, 10, 30), 110], [gt(2013, 10, 31), 130]
+			[gt(2016, 9, 1), 100.70], [gt(2016, 9, 2), 274.72], [gt(2016, 9, 3), 50.60], [gt(2016, 9, 4), 55.80], [gt(2016, 9, 5), 49.19], [gt(2016, 9, 6), 53.84], [gt(2016, 9, 7), 524.39],
+			[gt(2016, 9, 8), 301.83], [gt(2016, 9, 9), 457.39], [gt(2016, 9, 10), 65.17], [gt(2016, 9, 11), 315.05], [gt(2016, 9, 12), 276.20], [gt(2016, 9, 13), 56.24], [gt(2016, 9, 14), 47.35],
+			[gt(2016, 9, 15), 185.70], [gt(2016, 9, 16), 98.95], [gt(2016, 9, 17), 159.91], [gt(2016, 9, 18), 76.77], [gt(2016, 9, 19), 236.94], [gt(2016, 9, 20), 41.26], [gt(2016, 9, 21), 45.38],
+			[gt(2016, 9, 22), 100.29]
 		];
 
 		var plot = $.plot(placeholder, 
 			[
 				{
-					data: visit,
-					label: "Visits",
+					data: yours,
+					label: "Yours",
 					bars: {
 						show: true,
 						fill: false,
@@ -512,81 +549,7 @@ $(document).ready(function(){
 				},
 				{
 					data: val,
-					label: "Sales"
-				}
-			], 
-
-			{
-				series: {
-					lines: {
-						show: true,
-						lineWidth: 2, 
-						fill: false
-					},
-					points: {
-						show: true, 
-						lineWidth: 3,
-						fill: true,
-						fillColor: "#fafafa"
-					},
-					shadowSize: 0
-				},
-				grid: {
-					hoverable: true, 
-					clickable: true,
-					borderWidth: 0,
-					tickColor: "#E4E4E4",
-					
-				},
-				colors: ["rgba(217,217,217, 0.3)", "#d7ea2b"],
-				yaxis: {
-					font: { color: "#555" },
-					ticks: 8,
-				},
-				xaxis: {
-					mode: "time",
-					timezone: "browser",
-					minTickSize: [1, "day"],
-					font: { color: "#555" },
-					tickColor: "#fafafa",
-					autoscaleMargin: 0.02
-				},
-				legend: {
-					labelBoxBorderColor: "transparent",
-					backgroundColor: "transparent"
-				},
-				tooltip: true,
-				tooltipOpts: {
-					content: '%s: %y'
-				}
-			}
-		); 
-
-	}
-
-	// init flot chart: current year
-	function chartYear(placeholder) {
-
-		var visit = [
-			[gt(2013, 1, 1), 200], [gt(2013, 2, 1), 300], [gt(2013, 3, 1), 360], [gt(2013, 4, 1), 340], [gt(2013, 5, 1), 440], [gt(2013, 6, 1), 600], [gt(2013, 7, 1), 1050],
-			[gt(2013, 8, 1), 1700], [gt(2013, 9, 1), 1100], [gt(2013, 10, 1), 1200], [gt(2013, 11, 1), 1300], [gt(2013, 12, 1), 1500]
-		];
-
-		var val = [
-			[gt(2013, 1, 1), 100], [gt(2013, 2, 1), 155], [gt(2013, 3, 1), 180], [gt(2013, 4, 1), 172], [gt(2013, 5, 1), 222], [gt(2013, 6, 1), 300], [gt(2013, 7, 1), 550],
-			[gt(2013, 8, 1), 452], [gt(2013, 9, 1), 552], [gt(2013, 10, 1), 600], [gt(2013, 11, 1), 680], [gt(2013, 12, 1), 750]
-		];
-
-		var plot = $.plot(placeholder, 
-			[
-				{
-					data: visit,
-					label: "Visits"
-				},
-				{
-					data: val,
-					label: "Sales"
-
+					label: "Social"
 				}
 			], 
 
@@ -620,7 +583,7 @@ $(document).ready(function(){
 				xaxis: {
 					mode: "time",
 					timezone: "browser",
-					minTickSize: [1, "month"],
+					minTickSize: [1, "day"],
 					font: { color: "#555" },
 					tickColor: "#fafafa",
 					autoscaleMargin: 0.02
@@ -634,21 +597,37 @@ $(document).ready(function(){
 					content: '%s: %y'
 				}
 			}
-		);
+		); 
+
+	}
+
+	// init flot chart: current quarter
+	function chartQuarter(placeholder) {
+		chartMonth(placeholder);
+	}
+	
+	// init flot chart: current 6 months
+	function chartHalfYear(placeholder) {
+		chartMonth(placeholder);
+	}
+	
+	// init flot chart: current year
+	function chartYear(placeholder) {
+		chartMonth(placeholder);
 	}
 
 	// init flot chart: vertical bar chart
 	function chartBarVertical(placeholder) {
 		var basic = [
-			[gt(2013, 10, 21), 188], [gt(2013, 10, 22), 205], [gt(2013, 10, 23), 250], [gt(2013, 10, 24), 230], [gt(2013, 10, 25), 245], [gt(2013, 10, 26), 260], [gt(2013, 10, 27), 290]
+			[gt(2016, 9, 21), 188], [gt(2016, 9, 22), 205], [gt(2016, 9, 23), 250], [gt(2016, 9, 24), 230], [gt(2016, 9, 25), 245], [gt(2016, 9, 26), 260], [gt(2016, 9, 27), 290]
 		];
 
 		var gold = [
-			[gt(2013, 10, 21), 100], [gt(2013, 10, 22), 110], [gt(2013, 10, 23), 155], [gt(2013, 10, 24), 120], [gt(2013, 10, 25), 135], [gt(2013, 10, 26), 150], [gt(2013, 10, 27), 175]
+			[gt(2016, 9, 21), 100], [gt(2016, 9, 22), 110], [gt(2016, 9, 23), 155], [gt(2016, 9, 24), 120], [gt(2016, 9, 25), 135], [gt(2016, 9, 26), 150], [gt(2016, 9, 27), 175]
 		];
 
 		var platinum = [
-			[gt(2013, 10, 21), 75], [gt(2013, 10, 22), 65], [gt(2013, 10, 23), 80], [gt(2013, 10, 24), 60], [gt(2013, 10, 25), 65], [gt(2013, 10, 26), 80], [gt(2013, 10, 27), 110]
+			[gt(2016, 9, 21), 75], [gt(2016, 9, 22), 65], [gt(2016, 9, 23), 80], [gt(2016, 9, 24), 60], [gt(2016, 9, 25), 65], [gt(2016, 9, 26), 80], [gt(2016, 9, 27), 110]
 		];
 
 		var plot = $.plot(placeholder, 
