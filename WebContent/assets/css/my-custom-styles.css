@@ -12,3 +12,45 @@
 *	
 *	################################################################################
 */
+
+/* top bar */
+.top-bar {
+  background-color: #fff;
+  border-bottom: 1px solid #f2f2f2;
+}
+.top-bar .top-bar-right .btn-link {
+  color: #7b7b7b;
+}
+.top-bar .top-bar-right .btn-link:hover {
+  color: #555555;
+}
+.top-bar .notifications .count {
+  border-color: #fff;
+}
+.top-bar .notifications .notification-item .btn-group > a {
+  color: #7b7b7b;
+}
+.top-bar .notifications .notification-item .btn-group > a:hover, .top-bar .notifications .notification-item .btn-group > a:focus {
+  color: #555555;
+}
+.top-bar .searchbox input[type="search"] {
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  color: #cccccc;
+}
+.top-bar .searchbox .btn {
+  background-color: #d9d9d9;
+  border-color: #e6e6e6;
+}
+.top-bar .searchbox .btn i {
+  color: #f2f2f2;
+}
+.top-bar .searchbox .btn:hover {
+  border-color: #d9d9d9;
+}
+.top-bar .searchbox .btn:hover i {
+  color: #e6e6e6;
+}
+.top-bar .logged-user .open .btn {
+  color: #7b7b7b;
+}
