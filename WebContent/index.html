@@ -263,120 +263,52 @@
 			<!-- main -->
 			<div class="content">
 				<div class="main-header">
-					<h3>DASHBOARD v4</h4>
-					<em>investment portfolio and market info</em>
+					<h2>DASHBOARD</h2>
+					<em>the first priority information</em>
 				</div>
 				<div class="main-content">
-					<div class="row bottom-60px">
-						<div class="col-md-2">
-							<div class="investment-summary">
-								<span class="info-label">Current Value</span>
-								<strong>$67,300</strong>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<div class="investment-summary">
-								<span class="info-label">Total Invested</span>
-								<strong>$50,000</strong>
-							</div>
-						</div>
-						<div class="col-md-2 col-md-offset-2">
-							<div class="investment-summary text-right">
-								<span class="info-label">Today's Gain/Loss</span>
-								<span class="inv-red"><strong>$147.85</strong> <i class="fa fa-caret-down"></i></span> <span class="percentage">0.43%</span>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<div class="investment-summary text-right">
-								<span class="info-label">Month’s Gain/Loss</span>
-								<span class="inv-green"><strong>$1846.56</strong> <i class="fa fa-caret-up"></i></span> <span class="percentage">3.87%</span>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<div class="investment-summary text-right">
-								<span class="info-label">YTD’s Gain/Loss</span>
-								<span class="inv-green"><strong>$17,300.00</strong> <i class="fa fa-caret-up"></i></span> <span class="percentage">15.53%</span>
-							</div>
-						</div>
-					</div>
+
 					<div class="row bottom-60px">
 						<div class="col-md-8">
-							<table class="table table-striped">
-								<thead>
-									<tr>
-										<th>Asset Type</th>
-										<th>Current Valuation</th>
-										<th>Amount Invested</th>
-										<th>Today's G/L</th>
-										<th>Month's G/L</th>
-										<th>YTD's G/L</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td><a href="#">Stock</a></td>
-										<td>$23,000</td>
-										<td>$18,000</td>
-										<td><span class="inv-red">0.34%</span></td>
-										<td><span class="inv-green">4.56%</span></td>
-										<td><span class="inv-green">18.28%</span></td>
-									</tr>
-									<tr>
-										<td><a href="#">Mutual Fund</a></td>
-										<td>$2,300</td>
-										<td>$2,000</td>
-										<td><span class="inv-red">1.64%</span></td>
-										<td><span class="inv-red">5.66%</span></td>
-										<td><span class="inv-green">12.09%</span></td>
-									</tr>
-									<tr>
-										<td><a href="#">Fixed Assets</a></td>
-										<td>$35,000</td>
-										<td>$20,000</td>
-										<td><span class="inv-red">8.54%</span></td>
-										<td><span class="inv-red">12.78%</span></td>
-										<td><span class="inv-green">25.32%</span></td>
-									</tr>
-									<tr>
-										<td><a href="#">Foreign Exchange</a></td>
-										<td>$6,000</td>
-										<td>$7,500</td>
-										<td><span class="inv-green">12.88%</span></td>
-										<td><span class="inv-red">17.85%</span></td>
-										<td><span class="inv-red">30.28%</span></td>
-									</tr>
-									<tr>
-										<td><a href="#">Others</a></td>
-										<td>$1,000</td>
-										<td>$2,500</td>
-										<td><span class="inv-red">15.50%</span></td>
-										<td><span class="inv-red">27.33%</span></td>
-										<td><span class="inv-red">35.21%</span></td>
-									</tr>
-									<tr>
-										<td><a href="#">Stock</a></td>
-										<td>$23,000</td>
-										<td>$18,000</td>
-										<td><span class="inv-red">0.34%</span></td>
-										<td><span class="inv-green">4.56%</span></td>
-										<td><span class="inv-green">18.28%</span></td>
-									</tr>
-									<tr>
-										<td><a href="#">Mutual Fund</a></td>
-										<td>$2,300</td>
-										<td>$2,000</td>
-										<td><span class="inv-red">1.64%</span></td>
-										<td><span class="inv-red">5.66%</span></td>
-										<td><span class="inv-green">12.09%</span></td>
-									</tr>
-								</tbody>
-							</table>
+										<div class="widget">
+						<div class="widget-header">
+							<h3><i class="fa fa-bar-chart-o"></i> Sales Stat</h3> <em>- Visits, Sales and Traffic Source</em>
+							<button type="button" class="btn btn-link btn-help" data-original-title="" title=""><i class="fa fa-question-circle"></i></button>
+							<div class="btn-group widget-header-toolbar">
+								<a href="#" id="tour-focus" title="Focus" class="btn-borderless btn-focus"><i class="fa fa-eye"></i></a>
+								<a href="#" title="Expand/Collapse" class="btn-borderless btn-toggle-expand"><i class="fa fa-chevron-up"></i></a>
+								<a href="#" title="Remove" class="btn-borderless btn-remove"><i class="fa fa-times"></i></a>
+							</div>
 						</div>
+						<div class="widget-content">
+							<!-- chart tab nav -->
+							<div class="chart-nav">
+								<strong>Select period: </strong>
+								<ul id="sales-stat-tab">
+									<li class="active"><a href="#week">Weekly</a></li>
+									<li class=""><a href="#month">Monthly</a></li>
+									<li class=""><a href="#year">Annually</a></li>
+								</ul>
+							</div>
+							<!-- end chart tab nav -->
+							<!-- chart placeholder-->
+							<div class="chart-content">
+								<div class="demo-flot-chart sales-chart" data-ctype="#week" style="position: relative; padding: 0px;"><canvas class="flot-base" width="1270" height="350" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1270px; height: 350px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; max-width: 141px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 339px; left: 14px; text-align: center;">Sun</div><div style="position: absolute; max-width: 141px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 339px; left: 1095px; text-align: center;">Sun</div><div style="position: absolute; max-width: 141px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 339px; left: 168px; text-align: center;">Mon</div><div style="position: absolute; max-width: 141px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 339px; left: 1249px; text-align: center;">Mon</div><div style="position: absolute; max-width: 141px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 339px; left: 323px; text-align: center;">Tue</div><div style="position: absolute; max-width: 141px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 339px; left: 476px; text-align: center;">Wed</div><div style="position: absolute; max-width: 141px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 339px; left: 632px; text-align: center;">Thu</div><div style="position: absolute; max-width: 141px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 339px; left: 790px; text-align: center;">Fri</div><div style="position: absolute; max-width: 141px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 339px; left: 942px; text-align: center;">Sat</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 329px; left: 12px; text-align: right;">0</div><div style="position: absolute; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 274px; left: 6px; text-align: right;">50</div><div style="position: absolute; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 220px; left: 0px; text-align: right;">100</div><div style="position: absolute; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 166px; left: 0px; text-align: right;">150</div><div style="position: absolute; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 112px; left: 0px; text-align: right;">200</div><div style="position: absolute; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 58px; left: 0px; text-align: right;">250</div><div style="position: absolute; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 10px; line-height: 11.5px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(85, 85, 85); top: 4px; left: 0px; text-align: right;">300</div></div></div><canvas class="flot-overlay" width="1270" height="350" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1270px; height: 350px;"></canvas><div class="legend"><div style="position: absolute; width: 40px; height: 30px; top: 14px; right: 16px; opacity: 0.85; background-color: transparent;"> </div><table style="position:absolute;top:14px;right:16px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid transparent;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(125,147,154);overflow:hidden"></div></div></td><td class="legendLabel">Visits</td></tr><tr><td class="legendColorBox"><div style="border:1px solid transparent;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(29,146,175);overflow:hidden"></div></div></td><td class="legendLabel">Sales</td></tr></tbody></table></div></div>
+							</div>
+							<!-- end chart placeholder-->
+							
+						</div>
+					</div>
+						</div>
+						
+						
 						<div class="col-md-4">
 							<div id="investment-donut-chart"></div>
 						</div>
 					</div>
-										<div class="row">
+					
+					
+					<div class="row">
 						<div class="col-md-4">
 							<!-- WIDGET ACTIVITY FEED -->
 							<div class="widget widget-scrolling">
@@ -551,6 +483,20 @@
 	<script src="assets/js/plugins/stat/flot/jquery.flot.min.js"></script>
 	<script src="assets/js/plugins/stat/flot/jquery.flot.pie.min.js"></script>
 	<script src="assets/js/king-chart-stat.js"></script>
+	
+	<script src="assets/js/plugins/stat/jquery.easypiechart.min.js"></script>
+	<script src="assets/js/plugins/raphael/raphael-2.1.0.min.js"></script>
+	<script src="assets/js/plugins/stat/flot/jquery.flot.resize.min.js"></script>
+	<script src="assets/js/plugins/stat/flot/jquery.flot.time.min.js"></script>
+	<script src="assets/js/plugins/stat/flot/jquery.flot.tooltip.min.js"></script>
+	<script src="assets/js/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+	<script src="assets/js/plugins/datatable/jquery.dataTables.min.js"></script>
+	<script src="assets/js/plugins/datatable/dataTables.bootstrap.js"></script>
+	<script src="assets/js/plugins/jquery-mapael/jquery.mapael.js"></script>
+	<script src="assets/js/plugins/raphael/maps/usa_states.js"></script>
+	<script src="assets/js/king-table.js"></script>
+	<script src="assets/js/king-components.js"></script>
+	
 </body>
 
 </html>
