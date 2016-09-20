@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie ie9" lang="en" class="no-js"> <![endif]-->
+<!--[if !(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+	<title>Social Budget</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="Social Budget">
+	<meta name="author" content="Social Budget Team">
+	<!-- CSS -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/main.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/my-custom-styles.css" rel="stylesheet" type="text/css">
+	<!--[if lte IE 9]>
+		<link href="assets/css/main-ie.css" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/main-ie-part2.css" rel="stylesheet" type="text/css"/>
+	<![endif]-->
+	
+	<!-- Fav and touch icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/kingadmin-favicon144x144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/kingadmin-favicon114x114.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/kingadmin-favicon72x72.png">
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/ico/kingadmin-favicon57x57.png">
+	<link rel="shortcut icon" href="assets/ico/favicon.png">
+</head>
+
+<body class="sidebar-fixed topnav-fixed dashboard4">
+	<!-- WRAPPER -->
+	<div id="wrapper" class="wrapper">
+		<!-- TOP BAR -->
+		<div class="top-bar navbar-fixed-top">
+			<div class="container">
+				<div class="clearfix">
+					<a href="#" class="pull-left toggle-sidebar-collapse"><i class="fa fa-bars"></i></a>
+					<!-- logo -->
+					<div class="pull-left left logo">
+						<a href="index.html"><img src="assets/img/logo-white.png" alt="Social Budget" /></a>
+						<h1 class="sr-only">Social Budget</h1>
+					</div>
+					<!-- end logo -->
+					<div class="pull-right right">
+						<!-- top-bar-right -->
+						<div class="top-bar-right">
+							<div class="notifications">
+								<ul>
+									<!-- notification: inbox -->
+									<li class="notification-item inbox">
+										<div class="btn-group">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+												<i class="fa fa-envelope"></i><span class="count">2</span>
+												<span class="circle"></span>
+											</a>
+											<ul class="dropdown-menu" role="menu">
+												<li class="notification-header">
+													<em>You have 2 unread messages</em>
+												</li>
+												<li class="inbox-item clearfix">
+													<a href="#">
+														<div class="media">
+															<div class="media-left">
+																<img class="media-object" src="assets/img/user1.png" alt="Antonio">
+															</div>
+															<div class="media-body">
+																<h5 class="media-heading name">Antonius</h5>
+																<p class="text">The problem just happened this morning. I can't see ...</p>
+																<span class="timestamp">4 minutes ago</span>
+															</div>
+														</div>
+													</a>
+												</li>
+												<li class="inbox-item unread clearfix">
+													<a href="#">
+														<div class="media">
+															<div class="media-left">
+																<img class="media-object" src="assets/img/user2.png" alt="Antonio">
+															</div>
+															<div class="media-body">
+																<h5 class="media-heading name">Michael</h5>
+																<p class="text">Hey dude, cool theme!</p>
+																<span class="timestamp">2 hours ago</span>
+															</div>
+														</div>
+													</a>
+												</li>
+												<li class="inbox-item unread clearfix">
+													<a href="#">
+														<div class="media">
+															<div class="media-left">
+																<img class="media-object" src="assets/img/user3.png" alt="Antonio">
+															</div>
+															<div class="media-body">
+																<h5 class="media-heading name">Stella</h5>
+																<p class="text">Ok now I can see the status for each item. Thanks! :D</p>
+																<span class="timestamp">Oct 6</span>
+															</div>
+														</div>
+													</a>
+												</li>
+												<li class="inbox-item clearfix">
+													<a href="#">
+														<div class="media">
+															<div class="media-left">
+																<img class="media-object" src="assets/img/user4.png" alt="Antonio">
+															</div>
+															<div class="media-body">
+																<h5 class="media-heading name">Jane Doe</h5>
+																<p class="text"><i class="fa fa-reply"></i> Please check the status of your ...</p>
+																<span class="timestamp">Oct 2</span>
+															</div>
+														</div>
+													</a>
+												</li>
+												<li class="inbox-item clearfix">
+													<a href="#">
+														<div class="media">
+															<div class="media-left">
+																<img class="media-object" src="assets/img/user5.png" alt="Antonio">
+															</div>
+															<div class="media-body">
+																<h5 class="media-heading name">John Simmons</h5>
+																<p class="text"><i class="fa fa-reply"></i> I've fixed the problem :)</p>
+																<span class="timestamp">Sep 12</span>
+															</div>
+														</div>
+													</a>
+												</li>
+												<li class="notification-footer">
+													<a href="#">View All Messages</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<!-- end notification: inbox -->
+									<!-- notification: general -->
+									<li class="notification-item general">
+										<div class="btn-group">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+												<i class="fa fa-bell"></i><span class="count">8</span>
+												<span class="circle"></span>
+											</a>
+											<ul class="dropdown-menu" role="menu">
+												<li class="notification-header">
+													<em>You have 8 notifications</em>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fa fa-comment green-font"></i>
+														<span class="text">New comment on the blog post</span>
+														<span class="timestamp">1 minute ago</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fa fa-user green-font"></i>
+														<span class="text">New registered user</span>
+														<span class="timestamp">12 minutes ago</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fa fa-comment green-font"></i>
+														<span class="text">New comment on the blog post</span>
+														<span class="timestamp">18 minutes ago</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fa fa-shopping-cart red-font"></i>
+														<span class="text">4 new sales order</span>
+														<span class="timestamp">4 hours ago</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fa fa-edit yellow-font"></i>
+														<span class="text">3 product reviews awaiting moderation</span>
+														<span class="timestamp">1 day ago</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fa fa-comment green-font"></i>
+														<span class="text">New comment on the blog post</span>
+														<span class="timestamp">3 days ago</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fa fa-comment green-font"></i>
+														<span class="text">New comment on the blog post</span>
+														<span class="timestamp">Oct 15</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fa fa-warning red-font"></i>
+														<span class="text red-font">Low disk space!</span>
+														<span class="timestamp">Oct 11</span>
+													</a>
+												</li>
+												<li class="notification-footer">
+													<a href="#">View All Notifications</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<!-- end notification: general -->
+								</ul>
+							</div>
+							<!-- logged user and the menu -->
+							<div class="logged-user">
+								<div class="btn-group">
+									<a href="#" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+										<img src="assets/img/user-avatar.png" alt="User Avatar" />
+										<span class="name">Stacy Rose</span> <span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li>
+											<a href="#">
+												<i class="fa fa-user"></i>
+												<span class="text">Profile</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="fa fa-cog"></i>
+												<span class="text">Settings</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="fa fa-power-off"></i>
+												<span class="text">Logout</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- end logged user and the menu -->
+						</div>
+						<!-- end top-bar-right -->
+					</div>
+				</div>
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- END TOP BAR -->
+
+		<!-- MAIN CONTENT WRAPPER -->
+		<div id="main-content-wrapper" class="content-wrapper ">
+			<!-- top general alert -->
+			<div class="alert alert-danger top-general-alert">
+				<span>If you <strong>can't see the logo</strong> on the top left, please reset the style on right style switcher (for upgraded theme only).</span>
+				<button type="button" class="close">&times;</button>
+			</div>
+			<!-- end top general alert -->
+	
+			<!-- main -->
+			<div class="content">
+				<div class="main-header">
+					<h3>DASHBOARD v4</h4>
+					<em>investment portfolio and market info</em>
+				</div>
+				<div class="main-content">
+					<div class="row bottom-60px">
+						<div class="col-md-2">
+							<div class="investment-summary">
+								<span class="info-label">Current Value</span>
+								<strong>$67,300</strong>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="investment-summary">
+								<span class="info-label">Total Invested</span>
+								<strong>$50,000</strong>
+							</div>
+						</div>
+						<div class="col-md-2 col-md-offset-2">
+							<div class="investment-summary text-right">
+								<span class="info-label">Today's Gain/Loss</span>
+								<span class="inv-red"><strong>$147.85</strong> <i class="fa fa-caret-down"></i></span> <span class="percentage">0.43%</span>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="investment-summary text-right">
+								<span class="info-label">Month’s Gain/Loss</span>
+								<span class="inv-green"><strong>$1846.56</strong> <i class="fa fa-caret-up"></i></span> <span class="percentage">3.87%</span>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="investment-summary text-right">
+								<span class="info-label">YTD’s Gain/Loss</span>
+								<span class="inv-green"><strong>$17,300.00</strong> <i class="fa fa-caret-up"></i></span> <span class="percentage">15.53%</span>
+							</div>
+						</div>
+					</div>
+					<div class="row bottom-60px">
+						<div class="col-md-8">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>Asset Type</th>
+										<th>Current Valuation</th>
+										<th>Amount Invested</th>
+										<th>Today's G/L</th>
+										<th>Month's G/L</th>
+										<th>YTD's G/L</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><a href="#">Stock</a></td>
+										<td>$23,000</td>
+										<td>$18,000</td>
+										<td><span class="inv-red">0.34%</span></td>
+										<td><span class="inv-green">4.56%</span></td>
+										<td><span class="inv-green">18.28%</span></td>
+									</tr>
+									<tr>
+										<td><a href="#">Mutual Fund</a></td>
+										<td>$2,300</td>
+										<td>$2,000</td>
+										<td><span class="inv-red">1.64%</span></td>
+										<td><span class="inv-red">5.66%</span></td>
+										<td><span class="inv-green">12.09%</span></td>
+									</tr>
+									<tr>
+										<td><a href="#">Fixed Assets</a></td>
+										<td>$35,000</td>
+										<td>$20,000</td>
+										<td><span class="inv-red">8.54%</span></td>
+										<td><span class="inv-red">12.78%</span></td>
+										<td><span class="inv-green">25.32%</span></td>
+									</tr>
+									<tr>
+										<td><a href="#">Foreign Exchange</a></td>
+										<td>$6,000</td>
+										<td>$7,500</td>
+										<td><span class="inv-green">12.88%</span></td>
+										<td><span class="inv-red">17.85%</span></td>
+										<td><span class="inv-red">30.28%</span></td>
+									</tr>
+									<tr>
+										<td><a href="#">Others</a></td>
+										<td>$1,000</td>
+										<td>$2,500</td>
+										<td><span class="inv-red">15.50%</span></td>
+										<td><span class="inv-red">27.33%</span></td>
+										<td><span class="inv-red">35.21%</span></td>
+									</tr>
+									<tr>
+										<td><a href="#">Stock</a></td>
+										<td>$23,000</td>
+										<td>$18,000</td>
+										<td><span class="inv-red">0.34%</span></td>
+										<td><span class="inv-green">4.56%</span></td>
+										<td><span class="inv-green">18.28%</span></td>
+									</tr>
+									<tr>
+										<td><a href="#">Mutual Fund</a></td>
+										<td>$2,300</td>
+										<td>$2,000</td>
+										<td><span class="inv-red">1.64%</span></td>
+										<td><span class="inv-red">5.66%</span></td>
+										<td><span class="inv-green">12.09%</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-md-4">
+							<div id="investment-donut-chart"></div>
+						</div>
+					</div>
+										<div class="row">
+						<div class="col-md-4">
+							<!-- WIDGET ACTIVITY FEED -->
+							<div class="widget widget-scrolling">
+								<div class="widget-header">
+									<h3><i class="fa fa-fire"></i> Activity Feed</h3>
+									<div class="btn-group widget-header-toolbar">
+										<a href="#" title="Focus" class="btn-borderless btn-focus"><i class="fa fa-eye"></i></a>
+										<a href="#" title="Expand/Collapse" class="btn-borderless btn-toggle-expand"><i class="fa fa-chevron-up"></i></a>
+										<a href="#" title="Remove" class="btn-borderless btn-remove"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="widget-content">
+									<ul class="list-unstyled activity-list">
+										<li>
+											<i class="fa fa-check activity-icon pull-left icon-success"></i>
+											<p>All project tasks are on schedule <span class="timestamp">2 minutes ago</span></p>
+										</li>
+										<li>
+											<i class="fa fa-check-circle activity-icon pull-left icon-success"></i>
+											<p>The system is running well, no error found. <span class="timestamp">4 minutes ago</span></p>
+										</li>
+										<li>
+											<i class="fa fa-unlock activity-icon pull-left icon-danger"></i>
+											<p>You have unsecure file permission on this project. Go to <a href="">File Manager</a> to fix it <span class="timestamp">15 minutes ago</span></p>
+										</li>
+										<li>
+											<i class="fa fa-bug activity-icon pull-left icon-info"></i>
+											<p>New <a href="#">bug report</a> has been submitted <span class="timestamp">1 hour ago</span></p>
+										</li>
+										<li>
+											<i class="fa fa-close activity-icon pull-left icon-danger"></i>
+											<p>Background job <a href="#">#783458</a> has failed. See the <a href="#">logs</a> <span class="timestamp">3 hour ago</span></p>
+										</li>
+										<li>
+											<i class="fa fa-flag activity-icon pull-left icon-success"></i>
+											<p>Project <a href="#">Social Boost</a> has been flagged as finished <span class="timestamp">Yesterday</span></p>
+										</li>
+										<li>
+											<i class="fa fa-print activity-icon pull-left icon-warning"></i>
+											<p>You have <a href="#">pending documents</a> on the printer server <span class="timestamp">Yesterday</span></p>
+										</li>
+									</ul>
+									<button type="button" class="btn btn-clean center-block"><i class="fa fa-refresh"></i> Load more</button>
+								</div>
+							</div>
+							<!-- END WIDGET ACTIVITY FEED -->
+						</div>
+						<div class="col-md-4">
+							<!-- WIDGET TASKS -->
+							<div class="widget">
+								<div class="widget-header">
+									<h3><i class="fa fa-tasks"></i> My Tasks</h3> <em>- Summary of Tasks</em>
+									<div class="btn-group widget-header-toolbar">
+										<a href="#" title="Focus" class="btn-borderless btn-focus"><i class="fa fa-eye"></i></a>
+										<a href="#" title="Expand/Collapse" class="btn-borderless btn-toggle-expand"><i class="fa fa-chevron-up"></i></a>
+										<a href="#" title="Remove" class="btn-borderless btn-remove"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="widget-content">
+									<ul class="task-list">
+										<li>
+											<p>Updating Users Settings <span class="label label-danger">23%</span></p>
+											<div class="progress progress-xs">
+												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width:23%">
+													<span class="sr-only">23% Complete</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<p>Load &amp; Stress Test <span class="label label-success">80%</span></p>
+											<div class="progress progress-xs">
+												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+													<span class="sr-only">80% Complete</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<p>Data Duplication Check <span class="label label-success">100%</span></p>
+											<div class="progress progress-xs">
+												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+													<span class="sr-only">Success</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<p>Server Check <span class="label label-warning">45%</span></p>
+											<div class="progress progress-xs">
+												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+													<span class="sr-only">45% Complete</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<p>Mobile App Development <span class="label label-danger">10%</span></p>
+											<div class="progress progress-xs">
+												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+													<span class="sr-only">10% Complete</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<p>Documentation<span class="label label-danger">14%</span></p>
+											<div class="progress progress-xs">
+												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+													<span class="sr-only">14% Complete</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<p>A/B Testing<span class="label label-danger">57%</span></p>
+											<div class="progress progress-xs">
+												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+													<span class="sr-only">10% Complete</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- END WIDGET TASKS -->
+						</div>
+						<div class="col-md-4">
+							<!-- WIDGET EMPLOYEE -->
+							<div class="widget">
+								<div class="widget-header">
+									<h3><i class="fa fa-user"></i> Employee of The Month</h3>
+									<div class="btn-group widget-header-toolbar">
+										<a href="#" title="Focus" class="btn-borderless btn-focus"><i class="fa fa-eye"></i></a>
+										<a href="#" title="Expand/Collapse" class="btn-borderless btn-toggle-expand"><i class="fa fa-chevron-up"></i></a>
+										<a href="#" title="Remove" class="btn-borderless btn-remove"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="widget-content text-center">
+									<img src="assets/img/profile-avatar.png" class="img-circle" alt="Avatar" />
+									<h4>Jack Bay</h4>
+									<hr class="dashed" />
+									<ul class="list-unstyled text-muted">
+										<li>Most on-time</li>
+										<li>Most attitude, talkative and independent</li>
+										<li>Most fit and healthy</li>
+										<li>Most hard worker</li>
+									</ul>
+									<hr class="dashed" />
+									<button type="button" class="btn btn-large btn-primary"><i class="fa fa-thumbs-up"></i> Appreciate!</button>
+								</div>
+							</div>
+							<!-- END WIDGET EMPLOYEE -->
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<!-- /main -->
+			<!-- FOOTER -->
+			<footer class="footer">
+				&copy; Tech Initiative 2016! 
+			</footer>
+			<!-- END FOOTER -->
+		</div>
+		<!-- END CONTENT WRAPPER -->
+	</div>
+	<!-- END WRAPPER -->
+	
+	<!-- Javascript -->
+	<script src="assets/js/jquery/jquery-2.1.0.min.js"></script>
+	<script src="assets/js/bootstrap/bootstrap.js"></script>
+	<script src="assets/js/plugins/modernizr/modernizr.js"></script>
+	<script src="assets/js/plugins/bootstrap-tour/bootstrap-tour.custom.js"></script>
+	<script src="assets/js/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/js/king-common.js"></script>
+	<script src="assets/js/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/js/plugins/stat/flot/jquery.flot.min.js"></script>
+	<script src="assets/js/plugins/stat/flot/jquery.flot.pie.min.js"></script>
+	<script src="assets/js/king-chart-stat.js"></script>
+</body>
+
+</html>
