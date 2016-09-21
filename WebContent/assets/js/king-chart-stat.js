@@ -529,12 +529,29 @@ $(document).ready(function(){
 		placeholder.bind("plotclick", function(event, pos, obj) {
 			if(obj!=null)
 			{
-				if(obj.series.label=='Social')
+				if(obj.series.label=='Peers Spent')
 				{
+					$('#demo-donut-chart-merchant').unbind();
+					$('#demo-donut-chart-category').unbind();
+					$('#categoryTransactionTablediv').hide();
+					$('#demo-donut-chart-category').show();
+					$( "#categoryTransactionTable tbody" ).empty();
+					$('#merchantTransactionTablediv').hide();
+					$('#demo-donut-chart-merchant').show();
+					$( "#merchantTransactionTable tbody" ).empty();
+					
 					user=social_user_name;
 					populateCategoryPieChart(user);
 					populateMerchantPieChart(user);
 				}else{
+					$('#demo-donut-chart-merchant').unbind();
+					$('#demo-donut-chart-category').unbind();
+					$('#categoryTransactionTablediv').hide();
+					$('#demo-donut-chart-category').show();
+					$( "#categoryTransactionTable tbody" ).empty();
+					$('#merchantTransactionTablediv').hide();
+					$('#demo-donut-chart-merchant').show();
+					$( "#merchantTransactionTable tbody" ).empty();
 					user=user_name;
 					populateCategoryPieChart(user);
 					populateMerchantPieChart(user);
