@@ -3,6 +3,16 @@ $(document).ready(function(){
 	//*******************************************
 	/*	EASY PIE CHART
 	/********************************************/
+	var user_name='masterpassuser';
+	var social_user_name='social';
+	var user=user_name;
+	var duration='monthly';
+	initCharts();
+	function initCharts()
+	{
+		populateCategoryPieChart(user_name);
+		populateMerchantPieChart(user_name);
+	}
 
 	if( $('.easy-pie-chart').length > 0 ) {
 
@@ -34,7 +44,7 @@ $(document).ready(function(){
 	if( $('.sales-chart').length > 0 ) {
 		$placeholder = $('.sales-chart');
 		$placeholder.attr('data-ctype', '#month');
-		chartMonth($placeholder);
+		chartMonth($placeholder,duration);
 
 		// tabbed chart
 		$('#sales-stat-tab a').click(function(e) {
@@ -47,7 +57,7 @@ $(document).ready(function(){
 			$(this).parents('li').addClass('active');
 			
 			if($chartType == '#month') {
-				chartMonth($placeholder);
+				chartMonth($placeholder,duration);
 			}else if($chartType == '#quarter') {
 				chartQuarter($placeholder);
 			}else if($chartType == '#half') {
@@ -270,90 +280,6 @@ $(document).ready(function(){
 
 
 	//*******************************************
-	/*	DONUT CHART
-	/********************************************/
-
-	if( $('#demo-donut-chart-category').length > 0 ) {
-		var placeholder=$("#demo-donut-chart-category");
-		var data = top_merchant_donut_chart_data;
-
-		$.plot('#demo-donut-chart-category', data, {
-			series: {
-				pie: {
-					show: true,
-					innerRadius: .4,
-					stroke: {
-						width: 4,
-						color: "#F9F9F9"
-					},
-					label: {
-						show: true,
-						radius: 3/4,
-						formatter: labelFormatter
-					}
-				},
-			},
-			legend: {
-				show: false
-			},
-			grid: {
-				hoverable: true,
-				clickable: true
-			},
-			colors: ["#7d939a", "#5399D6", "#d7ea2b"],
-		});
-		
-		
-		placeholder.bind("plotclick", function(event, pos, obj) {
-
-				if (!obj) {
-					return;
-				}
-
-				placeholder.hide();
-				populateTransactions(placeholder,obj.series.label);
-			});
-	}
-	
-
-	
-	if( $('#investment-donut-chart').length > 0 ) {
-		var data = [
-			{ label: "Stock",  data: 55},
-			{ label: "Mutual Fund",  data: 8},
-			{ label: "Fixed Assets", data: 18},
-			{ label: "Forex", data: 12},
-			{ label: "Others", data: 7}
-		];
-
-		$.plot('#investment-donut-chart', data, {
-			series: {
-				pie: {
-					show: true,
-					//innerRadius: 0,
-					stroke: {
-						width: 0,
-						color: "#F9F9F9"
-					},
-					label: {
-						show: true,
-						radius: 3/4,
-						formatter: donutLabelFormatter
-					}
-				},
-			},
-			legend: {
-				show: false
-			},
-			grid: {
-				hoverable: true
-			},
-			colors: ["#f98114", "#88f914", "#f91465", "#1461f9", "#f9d614"],
-		});
-	}
-
-
-	//*******************************************
 	/*	CHART AND STAT DEMO PAGE
 	/********************************************/
 
@@ -492,21 +418,35 @@ $(document).ready(function(){
 	}
 
 	// init flot chart: current month
-	function chartMonth(placeholder) {
+	function chartMonth(placeholder,duration) {
 
-		var yours = [
-			[gt(2016, 9, 1), 6.5], [gt(2016, 9, 2), 239.56], [gt(2016, 9, 5), 83.54], [gt(2016, 9, 6), 33.6],
-			[gt(2016, 9, 8), 207.49], [gt(2016, 9, 9),94.5], [gt(2016, 9, 10), 63.7], [gt(2016, 9, 11), 155], [gt(2016, 9, 12), 69.8], [gt(2016, 9, 13), 128.34],
-			[gt(2016, 9, 15), 32.61], [gt(2016, 9, 18), 399.82], [gt(2016, 9, 19), 16.58], [gt(2016, 9, 20), 245.54], [gt(2016, 9, 21), 38.53],
-			[gt(2016, 9, 22), 229.6]
-		];
+		var val=[];
+		var yours=[];
+		if(duration == 'daily')
+		{
+				yours =[
+				[gt(2016, 9, 1), 6.5], [gt(2016, 9, 2), 239.56], [gt(2016, 9, 5), 83.54], [gt(2016, 9, 6), 33.6],[gt(2016, 9, 8), 207.49], [gt(2016, 9, 9),94.5]
+			];
+				val =[
+				[gt(2016, 9, 1), 100.70], [gt(2016, 9, 2), 274.72], [gt(2016, 9, 3), 50.60], [gt(2016, 9, 4), 55.80], [gt(2016, 9, 5), 49.19], [gt(2016, 9, 6), 53.84]
+			];
+		}else
+		{
+				yours =[
+					[gt(2016, 9, 1), 6.5], [gt(2016, 9, 2), 239.56], [gt(2016, 9, 5), 83.54], [gt(2016, 9, 6), 33.6],
+					[gt(2016, 9, 8), 207.49], [gt(2016, 9, 9),94.5], [gt(2016, 9, 10), 63.7], [gt(2016, 9, 11), 155], [gt(2016, 9, 12), 69.8], [gt(2016, 9, 13), 128.34],
+					[gt(2016, 9, 15), 32.61], [gt(2016, 9, 18), 399.82], [gt(2016, 9, 19), 16.58], [gt(2016, 9, 20), 245.54], [gt(2016, 9, 21), 38.53],
+					[gt(2016, 9, 22), 229.6]
+					];
+		
+				val =[
+					[gt(2016, 9, 1), 100.70], [gt(2016, 9, 2), 274.72], [gt(2016, 9, 3), 50.60], [gt(2016, 9, 4), 55.80], [gt(2016, 9, 5), 49.19], [gt(2016, 9, 6), 53.84], [gt(2016, 9, 7), 524.39],
+					[gt(2016, 9, 8), 301.83], [gt(2016, 9, 9), 457.39], [gt(2016, 9, 10), 65.17], [gt(2016, 9, 11), 315.05], [gt(2016, 9, 12), 276.20], [gt(2016, 9, 13), 56.24], [gt(2016, 9, 14), 47.35],
+					[gt(2016, 9, 15), 185.70], [gt(2016, 9, 16), 98.95], [gt(2016, 9, 17), 159.91], [gt(2016, 9, 18), 76.77], [gt(2016, 9, 19), 236.94], [gt(2016, 9, 20), 41.26], [gt(2016, 9, 21), 45.38],
+					[gt(2016, 9, 22), 100.29]
+				];
+		}
 
-		var val = [
-			[gt(2016, 9, 1), 100.70], [gt(2016, 9, 2), 274.72], [gt(2016, 9, 3), 50.60], [gt(2016, 9, 4), 55.80], [gt(2016, 9, 5), 49.19], [gt(2016, 9, 6), 53.84], [gt(2016, 9, 7), 524.39],
-			[gt(2016, 9, 8), 301.83], [gt(2016, 9, 9), 457.39], [gt(2016, 9, 10), 65.17], [gt(2016, 9, 11), 315.05], [gt(2016, 9, 12), 276.20], [gt(2016, 9, 13), 56.24], [gt(2016, 9, 14), 47.35],
-			[gt(2016, 9, 15), 185.70], [gt(2016, 9, 16), 98.95], [gt(2016, 9, 17), 159.91], [gt(2016, 9, 18), 76.77], [gt(2016, 9, 19), 236.94], [gt(2016, 9, 20), 41.26], [gt(2016, 9, 21), 45.38],
-			[gt(2016, 9, 22), 100.29]
-		];
 
 		var plot = $.plot(placeholder, 
 			[
@@ -518,8 +458,10 @@ $(document).ready(function(){
 						fill: false,
 						barWidth: 0.1,
 						align: "center",
-						lineWidth: 18
-					}
+						lineWidth: 18,
+						data: 'bar'
+						
+					},
 				},
 				{
 					data: val,
@@ -572,22 +514,40 @@ $(document).ready(function(){
 				}
 			}
 		); 
-
+		placeholder.bind("plotclick", function(event, pos, obj) {
+			if(obj!=null)
+			{
+				if(obj.series.label=='Social')
+				{
+					user=social_user_name;
+					populateCategoryPieChart(user);
+					populateMerchantPieChart(user);
+				}else{
+					user=user_name;
+					populateCategoryPieChart(user);
+					populateMerchantPieChart(user);
+				}
+			}
+			else
+			{
+				chartMonth(placeholder,'daily');
+			}
+		});
 	}
 
 	// init flot chart: current quarter
 	function chartQuarter(placeholder) {
-		chartMonth(placeholder);
+		chartMonth(placeholder,duration);
 	}
 	
 	// init flot chart: current 6 months
 	function chartHalfYear(placeholder) {
-		chartMonth(placeholder);
+		chartMonth(placeholder,duration);
 	}
 	
 	// init flot chart: current year
 	function chartYear(placeholder) {
-		chartMonth(placeholder);
+		chartMonth(placeholder,duration);
 	}
 
 	// init flot chart: vertical bar chart
@@ -1231,30 +1191,12 @@ $(document).ready(function(){
 			}
 		);
 	}
-	function labelFormatter(label, series) {
-		return "<div style='font-size:8pt; text-align:center; padding:2px; color:black;'> " + label + "<br/>" + Math.round(series.percent) + "%</div>";
-	}
-	function populateTransactions(placeholder,labelname)
-	{
-		var rows = "";
-		labelname=labelname.toLowerCase().replace(/ /g, '');
-		var transaction_items=labelname+'_transaction_items';
 
-		for (i = 0; i < valero_transaction_items.length; i++) { 
-			rows += "<tr><td>" + valero_transaction_items[i].TDate + "</td><td>" + valero_transaction_items[i].Description + "</td><td>" + valero_transaction_items[i].Amount + "</td></tr>";
-		}
 
-		$( rows ).appendTo( "#merchantTransactionTable tbody" );
-		$('#merchantTransactionTablediv').show();
-	}
-	
-	 $('#merchantTransactionWidgetHeader h3').on('click', function() {
-       $('#merchantTransactionTablediv').hide();
-	   placeholder.show();
-	   $( "#merchantTransactionTable tbody" ).empty();
-    });
-	
-	
+	//*******************************************
+	/*	DONUT CHART
+	/********************************************/
+
 	var theme = {
           color: [
               '#26B99A', '#34495E', '#BDC3C7', '#3498DB',
@@ -1402,54 +1344,130 @@ $(document).ready(function(){
           }
       };
 
-      var echartPieCollapse = echarts.init(document.getElementById('echart_pie2'), theme);
-      
-      echartPieCollapse.setOption({
-        tooltip: {
-          trigger: 'item',
-          formatter: "{a} <br/>{b} : {c} ({d}%)"
-        },
-        toolbox: {
-          show: true,
-          feature: {
-            magicType: {
-              show: true,
-              type: ['pie', 'funnel']
-            }
-          }
-        },
-        calculable: true,
-        series: [{
-          name: 'Friend',
-          type: 'pie',
-          radius: [25, 80],
-          center: ['50%', 100],
-          roseType: 'area',
-          x: '50%',
-          max: 40,
-          sort: 'ascending',
-          data: [{
-            value: 22,
-            name: 'David'
-          }, {
-            value: 20,
-            name: 'Rob'
-          }, {
-            value: 23,
-            name: 'Thomas'
-          }, {
-            value: 25,
-            name: 'Harry'
-          }, {
-            value: 20,
-            name: 'Mike'
-          }]
-        }]
-      });
+	function populateCategoryPieChart(user)
+	{
+		  var dataKey= user +'_top_category_donut_chart_data';
+		  var categoryData = window[dataKey];
+		  var categoryPie = echarts.init(document.getElementById('demo-donut-chart-category'), theme);
+		  
+		  categoryPie.setOption({
+			tooltip: {
+			  trigger: 'item',
+			  formatter: "{a} <br/>{b} : {c} ({d}%)"
+			},
+			toolbox: {
+			  show: true,
+			  feature: {
+				magicType: {
+				  show: true,
+				  type: ['pie', 'funnel']
+				}
+			  }
+			},
+			calculable: true,
+			series: [{
+			  name: 'Category',
+			  type: 'pie',
+			  radius: [25, 80],
+			  center: ['50%', 100],
+			  roseType: 'area',
+			  x: '50%',
+			  max: 40,
+			  sort: 'ascending',
+			  data: categoryData
+			}]
+		  });
 
-	echartPieCollapse.on('click', function (params) {
-alert(params);
-	});
+		categoryPie.on('click', function (params) {
+			populateTransactionsForCategory(user+'_'+params.data.name)
+		}); 
+	}
+
+
+    function populateMerchantPieChart(user)
+	{
+		var dataKey= user +'_top_merchant_donut_chart_data';
+		var merchantData = window[dataKey];
+
+		var merchantPie = echarts.init(document.getElementById('demo-donut-chart-merchant'), theme);
+		  
+		  merchantPie.setOption({
+			tooltip: {
+			  trigger: 'item',
+			  formatter: "{a} <br/>{b} : {c} ({d}%)"
+			},
+			toolbox: {
+			  show: true,
+			  feature: {
+				magicType: {
+				  show: true,
+				  type: ['pie', 'funnel']
+				}
+			  }
+			},
+			calculable: true,
+			series: [{
+			  name: 'Category',
+			  type: 'pie',
+			  radius: [25, 80],
+			  center: ['50%', 100],
+			  roseType: 'area',
+			  x: '50%',
+			  max: 40,
+			  sort: 'ascending',
+			  data: merchantData
+			}]
+		  });
+
+		merchantPie.on('click', function (params) {
+			populateTransactionsForMerchants(user+'_'+params.data.name)
+		});
+	}
+	  
+	function populateTransactionsForMerchants(labelname)
+	{
+		$('#demo-donut-chart-merchant').hide();
+		var rows = "";
+		labelname=labelname.toLowerCase().replace(/ /g, '');
+		labelname=labelname+'_transactions';
+		var transaction_items=window[labelname];
+
+		for (i = 0; i < transaction_items.length; i++) { 
+			rows += "<tr><td>" + transaction_items[i].TDate + "</td><td>" + transaction_items[i].Description + "</td><td>" + transaction_items[i].Amount + "</td></tr>";
+		}
+
+		$( rows ).appendTo( "#merchantTransactionTable tbody" );
+		$('#merchantTransactionTablediv').show();
+	}
+	
+	 $('#merchantTransactionWidgetHeader h3').on('click', function() {
+       $('#merchantTransactionTablediv').hide();
+	   $( "#merchantTransactionTable tbody" ).empty();
+	    $('#demo-donut-chart-merchant').show();
+		populateMerchantPieChart(user);
+    });
 
 	  
+	function populateTransactionsForCategory(labelname)
+	{
+		$('#demo-donut-chart-category').hide();
+		var rows = "";
+		labelname=labelname.toLowerCase().replace(/ /g, '');
+		labelname=labelname+'_transactions';
+		var transaction_items=window[labelname];
+
+		for (i = 0; i < transaction_items.length; i++) { 
+			rows += "<tr><td>" + transaction_items[i].TDate + "</td><td>" + transaction_items[i].Description + "</td><td>" + transaction_items[i].Amount + "</td></tr>";
+		}
+
+		$( rows ).appendTo( "#categoryTransactionTable tbody" );
+		$('#categoryTransactionTablediv').show();
+	}
+	
+	 $('#categoryTransactionWidgetHeader h3').on('click', function() {
+       $('#categoryTransactionTablediv').hide();
+	   $( "#categoryTransactionTable tbody" ).empty();
+	    $('#demo-donut-chart-category').show();
+		populateCategoryPieChart(user);
+    });
 }); // end ready function
