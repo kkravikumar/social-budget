@@ -126,10 +126,34 @@ $(document).ready(function(){
 			arrows: false
 		});
 		
-		$('.editable-slider').editRangeSlider({
+		$('#editable-slider-apparel').editRangeSlider({
 			arrows: false,
-			bounds: {min: 5, max: 50},
-			defaultValues: {min: 12, max: 40}
+			bounds: {min: 0, max: 350},
+			defaultValues: {min: 0, max: 200}
+		});
+		
+		$('#editable-slider-auto').editRangeSlider({
+			arrows: false,
+			bounds: {min: 0, max: 150},
+			defaultValues: {min: 0, max: 90}
+		});
+		
+		$('#editable-slider-grocery').editRangeSlider({
+			arrows: false,
+			bounds: {min: 0, max: 250},
+			defaultValues: {min: 0, max: 150}
+		});
+		
+		$('#editable-slider-gas').editRangeSlider({
+			arrows: false,
+			bounds: {min: 0, max: 150},
+			defaultValues: {min: 0, max: 70}
+		});
+		
+		$('#editable-slider-restaurant').editRangeSlider({
+			arrows: false,
+			bounds: {min: 0, max: 150},
+			defaultValues: {min: 0, max: 100}
 		});
 
 		$('.basic-step-slider').rangeSlider({
@@ -716,5 +740,10 @@ $(document).ready(function(){
 		$('#markdown-editor').text(toMarkdown(initContent));
 	}
 
+	if( $('.progress-bar').length > 0 ) {
+		$('.progress-bar').click( function() {
+			alert('progress-bar-restaurant');
+		});
+	}
 }); // end ready function
 
