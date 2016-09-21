@@ -459,7 +459,7 @@ $(document).ready(function(){
 			[
 				{
 					data: yourSpend,
-					label: "Yours Spend",
+					label: "",
 					bars: {
 						show: true,
 						fill: false,
@@ -473,11 +473,11 @@ $(document).ready(function(){
 					},
 				},{
 					data: yourBurn,
-					label: "Your Burn"
+					label: "Peers Spent"
 				},
 				{
 					data: socialBurn,
-					label: "Social Burn"
+					label: "My Spent"
 				}
 			], 
 
