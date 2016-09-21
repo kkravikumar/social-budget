@@ -305,10 +305,10 @@
 									<!-- WIDGET DONUT AND PIE CHART -->
 									<div class="widget">
 										<div class="widget-header">
-											<h3><i class="fa fa-truck"></i> Top Categories</h3> <em>- based on Visits</em>
+											<h3><i class="fa fa-truck"></i> Top Categories</h3> <em>- based on Spent</em>
 										</div>
 										<div class="widget-content">
-											<div id="demo-donut-chart-category" style="height:225px;"></div>
+											<div class="demo-flot-chart" id="demo-donut-chart-category"></div>
 											<div id="categoryTransactionTablediv" class="widget widget-table" hidden>
 												<div id="categoryTransactionWidgetHeader" class="widget-header">
 													<h3><i class="fa fa-arrow-left"></i></h3>  
@@ -319,8 +319,8 @@
 														<thead>
 															<tr>
 																<th>Date</th>
-																<th>Description</th>
-																<th>Amount</th>
+																<th>Merchant</th>
+																<th>Spent</th>
 															</tr>
 														</thead>
 														<tbody>
@@ -342,7 +342,7 @@
 											<h3><i class="fa fa-truck"></i> Top Merchant</h3> <em>- based on Spent</em>
 										</div>
 										<div class="widget-content">
-											<div id="demo-donut-chart-merchant" style="height:225px;"></div>
+											<div class="demo-flot-chart" id="demo-donut-chart-merchant"></div>
 											<div id="merchantTransactionTablediv" class="widget widget-table" hidden>
 												<div id="merchantTransactionWidgetHeader" class="widget-header">
 													<h3><i class="fa fa-arrow-left"></i></h3>  
@@ -354,7 +354,7 @@
 															<tr>
 																<th>Date</th>
 																<th>Description</th>
-																<th>Amount</th>
+																<th>Spent</th>
 															</tr>
 														</thead>
 														<tbody>
@@ -371,7 +371,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<!-- WIDGET TASKS -->
 							<div id="widget-progress-bar" class="widget widget-scrolling">
 								<div class="widget-header">
@@ -425,7 +425,7 @@
 							</div>
 							<!-- END WIDGET TASKS -->
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<!-- WIDGET ACTIVITY FEED -->
 							<div class="widget widget-scrolling">
 								<div class="widget-header">

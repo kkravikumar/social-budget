@@ -21431,3 +21431,13 @@ ul.recent-file-list > li {
   font-size: 0.9em;
   text-align: center;
 }
+
+#demo-donut-chart-category {
+  width: 100%;
+  height: 225px;
+}
+
+#demo-donut-chart-merchant {
+  width: 100%;
+  height: 225px;
+}

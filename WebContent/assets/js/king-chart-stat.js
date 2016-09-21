@@ -1344,7 +1344,7 @@ $(document).ready(function(){
           }
       };
 
-	function populateCategoryPieChart(user)
+	/* function populateCategoryPieChart(user)
 	{
 		  var dataKey= user +'_top_category_donut_chart_data';
 		  var categoryData = window[dataKey];
@@ -1422,12 +1422,99 @@ $(document).ready(function(){
 		merchantPie.on('click', function (params) {
 			populateTransactionsForMerchants(user+'_'+params.data.name)
 		});
+	} */
+	function populateCategoryPieChart(user)
+	{
+		if( $('#visit-chart, #demo-donut-chart-category').length > 0 ) {
+			var dataKey= user +'_top_category_donut_chart_data';
+			var merchantData = window[dataKey];
+
+
+			$.plot('#visit-chart, #demo-donut-chart-category', merchantData, {
+				series: {
+					pie: {
+						show: true,
+						innerRadius: .0,
+						stroke: {
+							width: 4,
+							color: "#F9F9F9"
+						},
+						label: {
+							show: true,
+							radius: 3/4,
+							formatter: labelFormatter
+							
+						}
+					},
+				},
+				legend: {
+					show: false
+				},
+				grid: {
+					hoverable: true,
+					clickable: true
+				},
+				colors: ["#7d939a", "#5399D6", "#d7ea2b"],
+			});
+		}
+		$("#demo-donut-chart-category").bind("plotclick", function(event, pos, obj) {
+			if (!obj) {
+					return;
+				}
+			
+			populateTransactionsForCategory(user+'_'+obj.series.label)
+		});
+	}
+	function populateMerchantPieChart(user)
+	{
+		if( $('#demo-donut-chart-merchant').length > 0 ) {
+
+			var dataKey= user +'_top_merchant_donut_chart_data';
+			var merchantData = window[dataKey];
+
+
+			$.plot('#demo-donut-chart-merchant', merchantData, {
+				series: {
+					pie: {
+						show: true,
+						innerRadius: .0,
+						stroke: {
+							width: 4,
+							color: "#F9F9F9"
+						},
+						label: {
+							show: true,
+							radius: 3/4,
+							formatter: labelFormatter
+						}
+					},
+				},
+				legend: {
+					show: false
+				},
+				grid: {
+					hoverable: true,
+					clickable: true
+				},
+				colors: ["#F0B67F", "#C7EFCF","#696047"],
+			});
+		}
+		$("#demo-donut-chart-merchant").bind("plotclick", function(event, pos, obj) {
+			if (!obj) {
+					return;
+				}
+			
+			populateTransactionsForMerchants(user+'_'+obj.series.label)
+		});
+		
 	}
 	  
 	function populateTransactionsForMerchants(labelname)
 	{
+		$('#demo-donut-chart-merchant').unbind();
 		$('#demo-donut-chart-merchant').hide();
 		var rows = "";
+		var transaction_items="";
 		labelname=labelname.toLowerCase().replace(/ /g, '');
 		labelname=labelname+'_transactions';
 		var transaction_items=window[labelname];
@@ -1450,8 +1537,10 @@ $(document).ready(function(){
 	  
 	function populateTransactionsForCategory(labelname)
 	{
+		$('#demo-donut-chart-category').unbind();
 		$('#demo-donut-chart-category').hide();
 		var rows = "";
+		var transaction_items="";
 		labelname=labelname.toLowerCase().replace(/ /g, '');
 		labelname=labelname+'_transactions';
 		var transaction_items=window[labelname];
@@ -1466,8 +1555,12 @@ $(document).ready(function(){
 	
 	 $('#categoryTransactionWidgetHeader h3').on('click', function() {
        $('#categoryTransactionTablediv').hide();
-	   $( "#categoryTransactionTable tbody" ).empty();
 	    $('#demo-donut-chart-category').show();
+		$( "#categoryTransactionTable tbody" ).empty();
 		populateCategoryPieChart(user);
     });
+	
+	function labelFormatter(label, series) {
+		return "<div style='font-size:8pt; text-align:left; padding:2px; color:black;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
+	}
 }); // end ready function

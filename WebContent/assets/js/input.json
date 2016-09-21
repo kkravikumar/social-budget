@@ -1,31 +1,31 @@
-var masterpassuser_top_category_donut_chart_data = [{ name: "Accessories",  value: 35},{ name: "Activities",  value: 40},{ name: "Airtravel", value: 50},{ name: "Alcohol", value: 45},{ name: "Hotel",  value: 40}];
-var masterpassuser_accessories_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var masterpassuser_activities_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var masterpassuser_airtravel_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var masterpassuser_alchohol_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var masterpassuser_hotel_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
+var masterpassuser_top_category_donut_chart_data = [{ label: "Travel",  data: 35},{ label: "Eat",  data: 40},{ label: "Shop", data: 50},{ label: "Play", data: 45},{ label: "Hotel",  data: 40}];
+var masterpassuser_travel_transactions = [{ TDate: "12-09-2016", Description: "kayak", Amount : "$800" },{ TDate: "25-08-2016", Description: "United Airline", Amount : "$600" },{ TDate: "22-08-2016", Description: "MakemyTrip", Amount : "$1000" }];
+var masterpassuser_eat_transactions = [{ TDate: "12-09-2016", Description: "Pizza Hut", Amount : "$200" },{ TDate: "25-08-2016", Description: "Dominos", Amount : "$350" },{ TDate: "22-08-2016", Description: "Burger King", Amount : "$25.76" }];
+var masterpassuser_shop_transactions = [{ TDate: "12-09-2016", Description: "Sears", Amount : "$500" },{ TDate: "25-08-2016", Description: "Nike", Amount : "$140" },{ TDate: "22-08-2016", Description: "Timberland", Amount : "$280" }];
+var masterpassuser_play_transactions = [{ TDate: "12-09-2016", Description: "ToysRus", Amount : "$300" },{ TDate: "25-08-2016", Description: "EA", Amount : "$300" },{ TDate: "14-09-2016", Description: "Microsoft", Amount : "$250" }];
+var masterpassuser_hotel_transactions = [{ TDate: "12-09-2016", Description: "Motel 6", Amount : "$280" },{ TDate: "25-08-2016", Description: "Extended Stay", Amount : "$500" },{ TDate: "22-08-2016", Description: "Holiday Inn", Amount : "$300" }];
 
 
-var masterpassuser_top_merchant_donut_chart_data = [{ name: "Netflix",  value: 40},{ name: "CVS",  value: 35},{ name: "Dollar Tree", value: 50},{ name: "Sears", value: 50},{ name: "Rebox",  value: 50}];
-var masterpassuser_rebox_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var masterpassuser_netflix_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var masterpassuser_cvs_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var masterpassuser_dollartree_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var masterpassuser_sears_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
+var masterpassuser_top_merchant_donut_chart_data = [{ label: "Netflix",  data: 40},{ label: "CVS",  data: 35},{ label: "Amazon", data: 50},{ label: "Sears", data: 50},{ label: "Rebox",  data: 50}];
+var masterpassuser_rebox_transactions = [{ TDate: "12-09-2016", Description: "Redbox - Belmont", Amount : "$300" },{ TDate: "25-08-2016", Description: "Redbox - LA", Amount : "$250" },{ TDate: "27-08-2016", Description: "Redbox - Newyork", Amount : "$100" }];
+var masterpassuser_netflix_transactions = [{ TDate: "12-09-2016", Description: "Civil war", Amount : "$80" },{ TDate: "25-08-2016", Description: "Unstoppable", Amount : "$50.90" },{ TDate: "27-08-2016", Description: "Avatar", Amount : "$35.41" }];
+var masterpassuser_cvs_transactions = [{ TDate: "12-09-2016", Description: "Traxil", Amount : "$30" },{ TDate: "25-08-2016", Description: "Swester", Amount : "$45" },{ TDate: "27-08-2016", Description: "Pradacate", Amount : "$20" }];
+var masterpassuser_amazon_transactions = [{ TDate: "12-09-2016", Description: "Napkins", Amount : "$5.34" },{ TDate: "25-08-2016", Description: "Plates", Amount : "$3.56" },{ TDate: "27-08-2016", Description: "Towels", Amount : "$30" }];
+var masterpassuser_sears_transactions = [{ TDate: "12-09-2016", Description: "Sweaters", Amount : "$333" },{ TDate: "25-08-2016", Description: "Shoes", Amount : "$30" },{ TDate: "27-08-2016", Description: "T-Shirts", Amount : "$200" }];
 
-var social_top_category_donut_chart_data = [{ name: "Accessories",  value: 40},{ name: "Activities",  value: 50},{ name: "Airtravel", value: 27},{ name: "Alcohol", value: 45},{ name: "Hotel",  value: 40}];
-var social_accessories_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var social_activities_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var social_airtravel_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var social_alchohol_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var social_hotel_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
+var social_top_category_donut_chart_data = [{ label: "Travel",  data: 40},{ label: "Eat",  data: 50},{ label: "Shop", data: 27},{ label: "Play", data: 45},{ label: "Hotel",  data: 40}];
+var social_travel_transactions = [{ TDate: "12-09-2016", Description: "kayak", Amount : "$400" },{ TDate: "25-08-2016", Description: "United Airline", Amount : "$500" },{ TDate: "22-08-2016", Description: "MakemyTrip", Amount : "$800" }];
+var social_eat_transactions = [{ TDate: "12-09-2016", Description: "Pizza Hut", Amount : "$30.23" },{ TDate: "25-08-2016", Description: "Dominos", Amount : "$10.34" },{ TDate: "22-08-2016", Description: "Burger King", Amount : "$25.2" }];
+var social_shop_transactions = [{ TDate: "12-09-2016", Description: "Sears", Amount : "$700" },{ TDate: "25-08-2016", Description: "Nike", Amount : "$440" },{ TDate: "22-08-2016", Description: "Timberland", Amount : "$180" }];
+var social_play_transactions = [{ TDate: "12-09-2016", Description: "ToysRus", Amount : "$200" },{ TDate: "25-08-2016", Description: "EA", Amount : "$100" },{ TDate: "14-09-2016", Description: "Microsoft", Amount : "$150" }];
+var social_hotel_transactions = [{ TDate: "12-09-2016", Description: "Motel 6", Amount : "$180" },{ TDate: "25-08-2016", Description: "Extended Stay", Amount : "$200" },{ TDate: "22-08-2016", Description: "Holiday Inn", Amount : "$200" }];
 
 
-var social_top_merchant_donut_chart_data = [{ name: "Netflix",  value: 60},{ name: "CVS",  value: 36},{ name: "Dollar Tree", value: 20},{ name: "Sears", value: 15},{ name: "Rebox",  value: 33}];
-var social_rebox_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var social_netflix_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var social_cvs_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var social_dollartree_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
-var social_sears_transactions = [{ TDate: "12-09-2016", Description: "Ralston Avenue", Amount : "3" },{ TDate: "13-09-2016", Description: "fostercity", Amount : "3" },{ TDate: "14-09-2016", Description: "Belmont", Amount : "3" }];
+var social_top_merchant_donut_chart_data = [{ label: "Netflix",  data: 60},{ label: "CVS",  data: 36},{ label: "Amazon", data: 20},{ label: "Sears", data: 15},{ label: "Rebox",  data: 33}];
+var social_rebox_transactions = [{ TDate: "12-09-2016", Description: "Redbox - Belmont", Amount : "$300" },{ TDate: "25-08-2016", Description: "Redbox - LA", Amount : "$250" },{ TDate: "27-08-2016", Description: "Redbox - Newyork", Amount : "$100" }];
+var social_netflix_transactions = [{ TDate: "12-09-2016", Description: "Civil war", Amount : "$80.04" },{ TDate: "25-08-2016", Description: "Unstoppable", Amount : "$50.04" },{ TDate: "27-08-2016", Description: "Avatar", Amount : "$35.81" }];
+var social_cvs_transactions = [{ TDate: "12-09-2016", Description: "Traxil", Amount : "$30" },{ TDate: "25-08-2016", Description: "Swester", Amount : "$45" },{ TDate: "27-08-2016", Description: "Pradacate", Amount : "$20.06" }];
+var social_amazon_transactions = [{ TDate: "12-09-2016", Description: "Napkins", Amount : "$5" },{ TDate: "25-08-2016", Description: "Plates", Amount : "$3" },{ TDate: "27-08-2016", Description: "Towels", Amount : "$30" }];
+var social_sears_transactions = [{ TDate: "12-09-2016", Description: "Sweaters", Amount : "$333" },{ TDate: "25-08-2016", Description: "Shoes", Amount : "$30" },{ TDate: "27-08-2016", Description: "T-Shirts", Amount : "$200" }];
 
 
