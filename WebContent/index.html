@@ -30,7 +30,7 @@
 </head>
 
 
-<body class="sidebar-fixed topnav-fixed dashboard4">
+<body class="sidebar-fixed topnav-fixed general-ui-elements">
 
 	<!-- WRAPPER -->
 	<div id="wrapper" class="wrapper">
@@ -255,12 +255,6 @@
 
 		<!-- MAIN CONTENT WRAPPER -->
 		<div id="main-content-wrapper" class="content-wrapper ">
-			<!-- top general alert -->
-			<div class="alert alert-danger top-general-alert">
-				<span>If you <strong>can't see the logo</strong> on the top left, please reset the style on right style switcher (for upgraded theme only).</span>
-				<button type="button" class="close">&times;</button>
-			</div>
-			<!-- end top general alert -->
 	
 			<!-- main -->
 			<div class="content">
@@ -373,9 +367,9 @@
 					<div class="row">
 						<div class="col-md-4">
 							<!-- WIDGET TASKS -->
-							<div class="widget">
+							<div id="widget-progress-bar" class="widget widget-scrolling">
 								<div class="widget-header">
-									<h3><i class="fa fa-tasks"></i> My Tasks</h3> <em>- Summary of Tasks</em>
+									<h3><i class="fa fa-tasks"></i> My Budgets</h3> <em>- Summary of Budgets</em>
 									<div class="btn-group widget-header-toolbar">
 										<a href="#" title="Focus" class="btn-borderless btn-focus"><i class="fa fa-eye"></i></a>
 										<a href="#" title="Expand/Collapse" class="btn-borderless btn-toggle-expand"><i class="fa fa-chevron-up"></i></a>
@@ -385,62 +379,42 @@
 								<div class="widget-content">
 									<ul class="task-list">
 										<li>
-											<p>Updating Users Settings <span class="label label-danger">23%</span></p>
-											<div class="progress progress-xs">
-												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width:23%">
-													<span class="sr-only">23% Complete</span>
+											<p>APPAREL<span class="label label-text">$150 LEFT</span></p>
+											<div class="progress custom-format">
+												<div class="progress-bar progress-bar-success" data-transitiongoal="50" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="200" style="width: 10%">
 												</div>
 											</div>
 										</li>
 										<li>
-											<p>Load &amp; Stress Test <span class="label label-success">80%</span></p>
-											<div class="progress progress-xs">
-												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-													<span class="sr-only">80% Complete</span>
+											<p>RESTAURANT <span class="label label-text">$23 LEFT</span></p>
+											<div class="progress custom-format">
+												<div class="progress-bar progress-bar-danger" data-transitiongoal="77" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width:23%">
 												</div>
 											</div>
 										</li>
 										<li>
-											<p>Data Duplication Check <span class="label label-success">100%</span></p>
-											<div class="progress progress-xs">
-												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-													<span class="sr-only">Success</span>
+											<p>AUTO <span class="label label-text">$80 LEFT</span></p>
+											<div class="progress custom-format">
+												<div class="progress-bar progress-bar-success" data-transitiongoal="10" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="90" style="width: 80%">
 												</div>
 											</div>
 										</li>
 										<li>
-											<p>Server Check <span class="label label-warning">45%</span></p>
-											<div class="progress progress-xs">
-												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-													<span class="sr-only">45% Complete</span>
+											<p>GROCERY <span class="label label-text">$40 LEFT</span></p>
+											<div class="progress custom-format">
+												<div class="progress-bar progress-bar-warning" data-transitiongoal="110" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="150" style="width: 100%">
 												</div>
 											</div>
 										</li>
 										<li>
-											<p>Mobile App Development <span class="label label-danger">10%</span></p>
-											<div class="progress progress-xs">
-												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-													<span class="sr-only">10% Complete</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<p>Documentation<span class="label label-danger">14%</span></p>
-											<div class="progress progress-xs">
-												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-													<span class="sr-only">14% Complete</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<p>A/B Testing<span class="label label-danger">57%</span></p>
-											<div class="progress progress-xs">
-												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-													<span class="sr-only">10% Complete</span>
+											<p>GAS <span class="label label-text">$40 LEFT</span></p>
+											<div class="progress custom-format">
+												<div class="progress-bar progress-bar-success" data-transitiongoal="30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="70" style="width: 10%">
 												</div>
 											</div>
 										</li>
 									</ul>
+									<button type="button" class="btn btn-primary center-block">View All Budgets</button>
 								</div>
 							</div>
 							<!-- END WIDGET TASKS -->
@@ -508,7 +482,7 @@
 	<!-- END WRAPPER -->
 	
 	<!-- Javascript -->
-	 <script type="text/javascript" src="assets/js/input.json"></script>
+	<script type="text/javascript" src="assets/js/input.json"></script>
 	<script src="assets/js/jquery/jquery-2.1.0.min.js"></script>
 	<script src="assets/js/bootstrap/bootstrap.js"></script>
 	<script src="assets/js/plugins/modernizr/modernizr.js"></script>
@@ -535,7 +509,8 @@
     <script src="assets/js/echarts/dist/echarts.min.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="assets/js/custom.min.js"></script>
-	
+	<script src="assets/js/plugins/bootstrap-progressbar/bootstrap-progressbar.js"></script>
+	<script src="assets/js/king-elements.js"></script>
 </body>
 
 </html>

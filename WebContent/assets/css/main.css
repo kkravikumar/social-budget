@@ -10498,6 +10498,12 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   background-color: #f0ad4e;
 }
 
+.label-text {
+  color: #555;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+}
+
 .note-editor .label-warning[href]:hover,
 .note-editor .label-warning[href]:focus {
   background-color: #ec971f;
