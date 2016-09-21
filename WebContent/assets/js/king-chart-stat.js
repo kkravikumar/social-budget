@@ -531,6 +531,8 @@ $(document).ready(function(){
 			{
 				if(obj.series.label=='Peers Spent')
 				{
+					$("#categoryHeader h3").html("<i class=\"fa fa-truck\"></i>Peer Top Categories");
+					$("#merchantHeader h3").html("<i class=\"fa fa-truck\"></i>Peer Top Merchants");
 					$('#demo-donut-chart-merchant').unbind();
 					$('#demo-donut-chart-category').unbind();
 					$('#categoryTransactionTablediv').hide();
@@ -544,6 +546,9 @@ $(document).ready(function(){
 					populateCategoryPieChart(user);
 					populateMerchantPieChart(user);
 				}else{
+					$("#categoryHeader h3").html("<i class=\"fa fa-truck\"></i>My Top Categories");
+					$("#merchantHeader h3").html("<i class=\"fa fa-truck\"></i>My Top Merchants");
+					
 					$('#demo-donut-chart-merchant').unbind();
 					$('#demo-donut-chart-category').unbind();
 					$('#categoryTransactionTablediv').hide();
