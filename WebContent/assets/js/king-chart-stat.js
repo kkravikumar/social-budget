@@ -296,10 +296,10 @@ $(document).ready(function(){
 		chartMonth( $('#demo-multi-types-chart') );
 
 	if( $('#spent-compare-bar-chart').length > 0 )
-		chartBarVerticalJson( $('#spent-compare-bar-chart'),'spent' );
+		chartBarMine( $('#spent-compare-bar-chart'),'spent' );
 
 	if( $('#visit-compare-bar-chart').length > 0 )
-		chartBarVerticalJson( $('#visit-compare-bar-chart'),'visit' );
+		chartBarPeer( $('#visit-compare-bar-chart'),'visit' );
 	
 	/* interactive chart demo page */
 	if( $('#demo-toggle-series-chart').length > 0 ) {
@@ -466,7 +466,7 @@ $(document).ready(function(){
 			[
 				{
 					data: yourSpend,
-					label: "",
+					label: "My Daily Spend",
 					bars: {
 						show: true,
 						fill: false,
@@ -480,11 +480,11 @@ $(document).ready(function(){
 					},
 				},{
 					data: yourBurn,
-					label: "Peers Spent"
+					label: "Peer Spend"
 				},
 				{
 					data: socialBurn,
-					label: "My Spent"
+					label: "My Spend"
 				}
 			], 
 
@@ -525,7 +525,8 @@ $(document).ready(function(){
 				},
 				legend: {
 					labelBoxBorderColor: "transparent",
-					backgroundColor: "transparent"
+					backgroundColor: "transparent",
+					noColumns: 0
 				},
 				tooltip: true,
 				tooltipOpts: {
@@ -536,7 +537,7 @@ $(document).ready(function(){
 		placeholder.bind("plotclick", function(event, pos, obj) {
 			if(obj!=null)
 			{
-				if(obj.series.label=='Peers Spent')
+				if(obj.series.label=='Peer Spend')
 				{
 					$("#categoryHeader h3").html("<i class=\"fa fa-truck\"></i>Peer Top Categories");
 					$("#merchantHeader h3").html("<i class=\"fa fa-truck\"></i>Peer Top Merchants");
@@ -568,10 +569,6 @@ $(document).ready(function(){
 					populateCategoryPieChart(user);
 					populateMerchantPieChart(user);
 				}
-			}
-			else
-			{
-				chartMonth(placeholder,'daily');
 			}
 		});
 	}
@@ -1606,8 +1603,8 @@ $(document).ready(function(){
 	}
 	
 
-		// init flot chart: vertical bar chart
-		function chartBarVerticalJson(placeholder,type) {
+	// init flot chart: vertical bar chart
+		function chartBarMine(placeholder,type) {
 
 				var mydataKey= type +'_my_bar_chart';
 				var peerdataKey= type +'_peer_bar_chart';
@@ -1624,7 +1621,7 @@ $(document).ready(function(){
 		 				},
 						{
 		 					data: peerData,
-		 					label: "peers"
+		 					label: "Peers"
 		 				}
 		 			], 
 		 			{
@@ -1639,6 +1636,8 @@ $(document).ready(function(){
 		 					clickable: true,
 		 					borderWidth: 1,
 		 					tickColor: "white",
+							align: "center",
+							autoscaleMargin:0.5
 		 					
 		 				},
 		 				colors: ["#99cccc", "#605b5b"],
@@ -1647,7 +1646,65 @@ $(document).ready(function(){
 		 				},
 		 				xaxis: {
 		 					
-							ticks: [[0,'Target'],[1,'Frys'],[2,'Amazon'],[3,'Best Buy'],[4,'Walmart'],[5,'HomeDepot']],
+							ticks: [[0,'Whole Foodes'],[1,'Target'],[2,'Nob Hill'],[3,'Safeway'],[4,'Lucky']],
+		 					
+		 				},
+		 				legend: {
+		 					labelBoxBorderColor: "transparent",
+		 					backgroundColor: "transparent"
+		 				},
+		 				tooltip: true,
+		 				tooltipOpts: {
+		 					content: '%s: %y'
+		 				}
+		 			}
+		 		);
+		}
+		// init flot chart: vertical bar chart
+		function chartBarPeer(placeholder,type) {
+
+				var mydataKey= type +'_peer_bar_chart';
+				var peerdataKey=type +'_my_bar_chart'; 
+				
+				var myData = window[mydataKey];
+				var peerData = window[peerdataKey];
+			
+				
+				
+		 		var plot = $.plot(placeholder, 
+		 			[
+		 				{
+		 					data: myData,
+		 					label: "Peers"
+		 				},
+						{
+		 					data: peerData,
+		 					label: "Mine"
+		 				}
+		 			], 
+		 			{
+		 				bars: {
+		 					show: true,
+		 					barWidth: 0.30,
+		 					order: 1,
+		 					fillColor: { colors: [ { opacity: 1 }, { opacity: 1 } ] }
+		 				},
+		 				grid: {
+		 					hoverable: true, 
+		 					clickable: true,
+		 					borderWidth: 1,
+		 					tickColor: "white",
+							align: "center",
+							autoscaleMargin:0.5
+		 					
+		 				},
+		 				colors: ["#605b5b","#99cccc"],
+		 				yaxis: {
+		 					font: { color: "#555" }
+		 				},
+		 				xaxis: {
+		 					
+							ticks: [[0,'Costco'],[1,'Trader Joe'],[2,'Amazon'],[3,'Safeway'],[4,'Whole Foods']],
 		 					
 		 				},
 		 				legend: {
