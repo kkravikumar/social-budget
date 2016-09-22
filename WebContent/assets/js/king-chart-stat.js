@@ -294,6 +294,12 @@ $(document).ready(function(){
 	if( $('#demo-multi-types-chart').length > 0 )
 		chartMonth( $('#demo-multi-types-chart') );
 
+	if( $('#spent-compare-bar-chart').length > 0 )
+		chartBarVerticalJson( $('#spent-compare-bar-chart') );
+
+	if( $('#visit-compare-bar-chart').length > 0 )
+		chartBarVerticalJson( $('#visit-compare-bar-chart') );
+	
 	/* interactive chart demo page */
 	if( $('#demo-toggle-series-chart').length > 0 ) {
 		chartToggleSeries( $('#demo-toggle-series-chart') );
@@ -1599,6 +1605,74 @@ $(document).ready(function(){
 	}
 	
 
+		// init flot chart: vertical bar chart
+		function chartBarVerticalJson(placeholder) {
+
+			//				var mySpentData = window[my_spent_bar_chart];
+				var mydata = [
+				  			[gt(2016, 9, 21), 75], [gt(2016, 9, 22), 65], [gt(2016, 9, 23), 80], [gt(2016, 9, 24), 60], [gt(2016, 9, 25), 65], [gt(2016, 9, 26), 80], [gt(2016, 9, 27), 110]
+				  			];
+		 		var peersdata = [
+		 		    			[gt(2016, 9, 21), 75], [gt(2016, 9, 22), 65], [gt(2016, 9, 23), 80], [gt(2016, 9, 24), 60], [gt(2016, 9, 25), 65], [gt(2016, 9, 26), 80], [gt(2016, 9, 27), 110]
+		 		    			];
+
+		 		var plot = $.plot(placeholder, 
+		 			[
+		 				{
+		 					data: mydata,
+		 					label: "Mine"
+		 				},
+		 				{
+		 					data: peersdata,
+		 					label: "Peers"
+		 				}
+		 			], 
+		 			{
+		 				bars: {
+		 					vertical: true,
+		 					show: true,
+		 					barWidth: 15*60*60*300,
+		 					fill: true,
+		 					order: true,
+		 					lineWidth: 0,
+		 					fillColor: { colors: [ { opacity: 1 }, { opacity: 1 } ] }
+		 				},
+		 				grid: {
+		 					hoverable: true, 
+		 					clickable: true,
+		 					borderWidth: 0,
+		 					tickColor: "#E4E4E4",
+		 					
+		 				},
+		 				colors: ["#d7ea2b", "#5399D6"],
+		 				yaxis: {
+		 					font: { color: "#555" }
+		 				},
+		 				xaxis: {
+		 					mode: "time",
+		 					timezone: "browser",
+		 					minTickSize: [1, "day"],
+		 					tickFormatter: function (v, axis) {
+		 						return "X";
+		 					},
+		 					timeformat: "%a",
+		 					font: { color: "#555" },
+		 					tickColor: "#fafafa",
+		 					autoscaleMargin: 0.2
+		 				},
+		 				legend: {
+		 					labelBoxBorderColor: "transparent",
+		 					backgroundColor: "transparent"
+		 				},
+		 				tooltip: true,
+		 				tooltipOpts: {
+		 					content: '%s: %y'
+		 				}
+		 			}
+		 		);
+		}
+		
+		
 		// global setting override
 		$.extend( $.gritter.options, {
 			// you can use these params to set global variable that affect all the notications behaviour

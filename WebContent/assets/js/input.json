@@ -29,3 +29,5 @@ var social_amazon_transactions = [{ TDate: "12-09-2016", Description: "Napkins",
 var social_sears_transactions = [{ TDate: "12-09-2016", Description: "Sweaters", Amount : "$333" },{ TDate: "25-08-2016", Description: "Shoes", Amount : "$30" },{ TDate: "27-08-2016", Description: "T-Shirts", Amount : "$200" }];
 
 
+var my_spent_bar_chart=[[Costco, 221.98], [Heinens Supermarket, 83.12], [Foodland, 83.12], [Kroger,76.39], [Publix,59.88], [Wholefoods Market,54.01], [Safeway,29.78]];
+var peers_spent_bar_chart=[[Costco, 121.98], [Heinens Supermarket, 183.12], [Foodland, 83.12], [Kroger,76.39], [Publix,159.88], [Wholefoods Market,54.01], [Safeway, 9.78]];
