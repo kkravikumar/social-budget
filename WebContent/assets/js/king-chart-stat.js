@@ -296,10 +296,10 @@ $(document).ready(function(){
 		chartMonth( $('#demo-multi-types-chart') );
 
 	if( $('#spent-compare-bar-chart').length > 0 )
-		chartBarVerticalJson( $('#spent-compare-bar-chart') );
+		chartBarVerticalJson( $('#spent-compare-bar-chart'),'spent' );
 
 	if( $('#visit-compare-bar-chart').length > 0 )
-		chartBarVerticalJson( $('#visit-compare-bar-chart') );
+		chartBarVerticalJson( $('#visit-compare-bar-chart'),'visit' );
 	
 	/* interactive chart demo page */
 	if( $('#demo-toggle-series-chart').length > 0 ) {
@@ -1607,59 +1607,48 @@ $(document).ready(function(){
 	
 
 		// init flot chart: vertical bar chart
-		function chartBarVerticalJson(placeholder) {
+		function chartBarVerticalJson(placeholder,type) {
 
-			//				var mySpentData = window[my_spent_bar_chart];
-				var mydata = [
-				  			[gt(2016, 9, 21), 75], [gt(2016, 9, 22), 65], [gt(2016, 9, 23), 80], [gt(2016, 9, 24), 60], [gt(2016, 9, 25), 65], [gt(2016, 9, 26), 80], [gt(2016, 9, 27), 110]
-				  			];
-		 		var peersdata = [
-		 		    			[gt(2016, 9, 21), 75], [gt(2016, 9, 22), 65], [gt(2016, 9, 23), 80], [gt(2016, 9, 24), 60], [gt(2016, 9, 25), 65], [gt(2016, 9, 26), 80], [gt(2016, 9, 27), 110]
-		 		    			];
-
+				var mydataKey= type +'_my_bar_chart';
+				var peerdataKey= type +'_peer_bar_chart';
+				
+				var myData = window[mydataKey];
+				var peerData = window[peerdataKey];
+			
+				
 		 		var plot = $.plot(placeholder, 
 		 			[
 		 				{
-		 					data: mydata,
+		 					data: myData,
 		 					label: "Mine"
 		 				},
-		 				{
-		 					data: peersdata,
-		 					label: "Peers"
+						{
+		 					data: peerData,
+		 					label: "peers"
 		 				}
 		 			], 
 		 			{
 		 				bars: {
-		 					vertical: true,
 		 					show: true,
-		 					barWidth: 15*60*60*300,
-		 					fill: true,
-		 					order: true,
-		 					lineWidth: 0,
+		 					barWidth: 0.30,
+		 					order: 1,
 		 					fillColor: { colors: [ { opacity: 1 }, { opacity: 1 } ] }
 		 				},
 		 				grid: {
 		 					hoverable: true, 
 		 					clickable: true,
-		 					borderWidth: 0,
-		 					tickColor: "#E4E4E4",
+		 					borderWidth: 1,
+		 					tickColor: "white",
 		 					
 		 				},
-		 				colors: ["#d7ea2b", "#5399D6"],
+		 				colors: ["#99cccc", "#605b5b"],
 		 				yaxis: {
 		 					font: { color: "#555" }
 		 				},
 		 				xaxis: {
-		 					mode: "time",
-		 					timezone: "browser",
-		 					minTickSize: [1, "day"],
-		 					tickFormatter: function (v, axis) {
-		 						return "X";
-		 					},
-		 					timeformat: "%a",
-		 					font: { color: "#555" },
-		 					tickColor: "#fafafa",
-		 					autoscaleMargin: 0.2
+		 					
+							ticks: [[0,'Target'],[1,'Frys'],[2,'Amazon'],[3,'Best Buy'],[4,'Walmart'],[5,'HomeDepot']],
+		 					
 		 				},
 		 				legend: {
 		 					labelBoxBorderColor: "transparent",

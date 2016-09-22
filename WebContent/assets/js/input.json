@@ -29,5 +29,8 @@ var social_amazon_transactions = [{ TDate: "12-09-2016", Description: "Amazon - 
 var social_sears_transactions = [{ TDate: "12-09-2016", Description: "Sears - GreatMall", Amount : "$333" },{ TDate: "25-08-2016", Description: "Sears - Hillsdale", Amount : "$30" },{ TDate: "27-08-2016", Description: "Sears - Dublin", Amount : "$200" }];
 
 
-var my_spent_bar_chart=[["Costco", 221.98], ["Heinens Supermarket", 83.12], ["Foodland", 83.12], ["Kroger",76.39], ["Publix",59.88], ["Wholefoods Market",54.01], ["Safeway",29.78]];
-var peers_spent_bar_chart=[["Costco", 121.98], ["Heinens Supermarket", 183.12], ["Foodland", 83.12], ["Kroger",76.39], ["Publix",159.88], ["Wholefoods Market",54.01], ["Safeway", 9.78]];
+var spent_my_bar_chart=[[0, 200.98], [1, 83.12], [2, 93.12], [3,0], [4,65.88], [5,54.01]];
+var spent_peer_bar_chart=[[0, 121.98], [1, 183.12], [2, 60.12], [3,76.39], [4,159.88], [5,94.01]];
+
+var visit_my_bar_chart=[[0, 10], [1, 20], [2, 15], [3,40], [4,10], [5,5]];
+var visit_peer_bar_chart=[[0, 30], [1, 0], [2, 104], [3,50], [4,5], [5,10]];
