@@ -672,7 +672,7 @@ $(document).ready(function(){
 		});
 
 		var categories = [];
-		$.each({"RS": "RESTAURANT", "GR": "GROGERIES", "AP": "APPAREL", "EL": "ELECTRONICS", "SP": "SPORTS"}, function(k, v) {
+		$.each({"RS": "RESTAURANT", "GR": "GROGERIES", "AP": "APPAREL", "EL": "ELECTRONICS", "MS": "MEN'S SHOES"}, function(k, v) {
 			categories.push({id: k, text: v});
 		});
 		
