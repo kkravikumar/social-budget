@@ -6,12 +6,12 @@ var masterpassuser_play_transactions = [{ TDate: "12-09-2016", Description: "Toy
 var masterpassuser_hotel_transactions = [{ TDate: "12-09-2016", Description: "Motel 6", Amount : "$280" },{ TDate: "25-08-2016", Description: "Extended Stay", Amount : "$500" },{ TDate: "22-08-2016", Description: "Holiday Inn", Amount : "$300" }];
 
 
-var masterpassuser_top_merchant_donut_chart_data = [{ label: "Netflix",  data: 40},{ label: "CVS",  data: 35},{ label: "Amazon", data: 55},{ label: "Sears", data: 15},{ label: "Rebox",  data: 69}];
-var masterpassuser_rebox_transactions = [{ TDate: "12-09-2016", Description: "Redbox - Belmont", Amount : "$300" },{ TDate: "25-08-2016", Description: "Redbox - LA", Amount : "$250" },{ TDate: "27-08-2016", Description: "Redbox - Newyork", Amount : "$100" }];
-var masterpassuser_netflix_transactions = [{ TDate: "12-09-2016", Description: "Civil war", Amount : "$80" },{ TDate: "25-08-2016", Description: "Unstoppable", Amount : "$50.90" },{ TDate: "27-08-2016", Description: "Avatar", Amount : "$35.41" }];
-var masterpassuser_cvs_transactions = [{ TDate: "12-09-2016", Description: "Traxil", Amount : "$30" },{ TDate: "25-08-2016", Description: "Swester", Amount : "$45" },{ TDate: "27-08-2016", Description: "Pradacate", Amount : "$20" }];
-var masterpassuser_amazon_transactions = [{ TDate: "12-09-2016", Description: "Napkins", Amount : "$5.34" },{ TDate: "25-08-2016", Description: "Plates", Amount : "$3.56" },{ TDate: "27-08-2016", Description: "Towels", Amount : "$30" }];
-var masterpassuser_sears_transactions = [{ TDate: "12-09-2016", Description: "Sweaters", Amount : "$333" },{ TDate: "25-08-2016", Description: "Shoes", Amount : "$30" },{ TDate: "27-08-2016", Description: "T-Shirts", Amount : "$200" }];
+var masterpassuser_top_merchant_donut_chart_data = [{ label: "Netflix",  data: 40},{ label: "CVS",  data: 35},{ label: "Amazon", data: 55},{ label: "Sears", data: 15},{ label: "Redbox",  data: 69}];
+var masterpassuser_redbox_transactions = [{ TDate: "12-09-2016", Description: "Redbox - Belmont", Amount : "$300" },{ TDate: "25-08-2016", Description: "Redbox - LA", Amount : "$250" },{ TDate: "27-08-2016", Description: "Redbox - Newyork", Amount : "$100" }];
+var masterpassuser_netflix_transactions = [{ TDate: "12-09-2016", Description: "Netflix - Trans ", Amount : "$80" },{ TDate: "25-08-2016", Description: "Netflix - Trans ", Amount : "$50.90" },{ TDate: "27-08-2016", Description: "Netflix - Trans ", Amount : "$35.41" }];
+var masterpassuser_cvs_transactions = [{ TDate: "12-09-2016", Description: "CVS - San Mateo", Amount : "$30" },{ TDate: "25-08-2016", Description: "CVS - Burlingame", Amount : "$45" },{ TDate: "27-08-2016", Description: "CVS - Milbrae", Amount : "$20" }];
+var masterpassuser_amazon_transactions = [{ TDate: "12-09-2016", Description: "Amazon - US", Amount : "$5.34" },{ TDate: "25-08-2016", Description: "Amazon - IN", Amount : "$3.56" },{ TDate: "27-08-2016", Description: "Amazon - UK", Amount : "$30" }];
+var masterpassuser_sears_transactions = [{ TDate: "12-09-2016", Description: "Sears - GreatMall", Amount : "$333" },{ TDate: "25-08-2016", Description: "Sears - Hillsdale", Amount : "$30" },{ TDate: "27-08-2016", Description: "Sears - Dublin", Amount : "$200" }];
 
 var social_top_category_donut_chart_data = [{ label: "Travel",  data: 30},{ label: "Eat",  data: 15},{ label: "Shop", data: 27},{ label: "Play", data: 45},{ label: "Hotel",  data: 60}];
 var social_travel_transactions = [{ TDate: "12-09-2016", Description: "kayak", Amount : "$400" },{ TDate: "25-08-2016", Description: "United Airline", Amount : "$500" },{ TDate: "22-08-2016", Description: "MakemyTrip", Amount : "$800" }];
@@ -21,13 +21,13 @@ var social_play_transactions = [{ TDate: "12-09-2016", Description: "ToysRus", A
 var social_hotel_transactions = [{ TDate: "12-09-2016", Description: "Motel 6", Amount : "$180" },{ TDate: "25-08-2016", Description: "Extended Stay", Amount : "$200" },{ TDate: "22-08-2016", Description: "Holiday Inn", Amount : "$200" }];
 
 
-var social_top_merchant_donut_chart_data = [{ label: "Netflix",  data: 60},{ label: "CVS",  data: 36},{ label: "Amazon", data: 20},{ label: "Sears", data: 15},{ label: "Rebox",  data: 33}];
-var social_rebox_transactions = [{ TDate: "12-09-2016", Description: "Redbox - Belmont", Amount : "$300" },{ TDate: "25-08-2016", Description: "Redbox - LA", Amount : "$250" },{ TDate: "27-08-2016", Description: "Redbox - Newyork", Amount : "$100" }];
-var social_netflix_transactions = [{ TDate: "12-09-2016", Description: "Civil war", Amount : "$80.04" },{ TDate: "25-08-2016", Description: "Unstoppable", Amount : "$50.04" },{ TDate: "27-08-2016", Description: "Avatar", Amount : "$35.81" }];
-var social_cvs_transactions = [{ TDate: "12-09-2016", Description: "Traxil", Amount : "$30" },{ TDate: "25-08-2016", Description: "Swester", Amount : "$45" },{ TDate: "27-08-2016", Description: "Pradacate", Amount : "$20.06" }];
-var social_amazon_transactions = [{ TDate: "12-09-2016", Description: "Napkins", Amount : "$5" },{ TDate: "25-08-2016", Description: "Plates", Amount : "$3" },{ TDate: "27-08-2016", Description: "Towels", Amount : "$30" }];
-var social_sears_transactions = [{ TDate: "12-09-2016", Description: "Sweaters", Amount : "$333" },{ TDate: "25-08-2016", Description: "Shoes", Amount : "$30" },{ TDate: "27-08-2016", Description: "T-Shirts", Amount : "$200" }];
+var social_top_merchant_donut_chart_data = [{ label: "Netflix",  data: 60},{ label: "CVS",  data: 36},{ label: "Amazon", data: 20},{ label: "Sears", data: 15},{ label: "Redbox",  data: 33}];
+var social_redbox_transactions = [{ TDate: "12-09-2016", Description: "Redbox - Belmont", Amount : "$300" },{ TDate: "25-08-2016", Description: "Redbox - LA", Amount : "$250" },{ TDate: "27-08-2016", Description: "Redbox - Newyork", Amount : "$100" }];
+var social_netflix_transactions = [{ TDate: "12-09-2016", Description: "Netflix - Trans ", Amount : "$80.04" },{ TDate: "25-08-2016", Description: "Netflix - Trans ", Amount : "$50.04" },{ TDate: "27-08-2016", Description: "Netflix - Trans ", Amount : "$35.81" }];
+var social_cvs_transactions = [{ TDate: "12-09-2016", Description: "CVS - San Mateo", Amount : "$30" },{ TDate: "25-08-2016", Description: "CVS - Burlingame", Amount : "$45" },{ TDate: "27-08-2016", Description: "CVS - Fostercity", Amount : "$20.06" }];
+var social_amazon_transactions = [{ TDate: "12-09-2016", Description: "Amazon - US", Amount : "$5" },{ TDate: "25-08-2016", Description: "Amazon - IN", Amount : "$3" },{ TDate: "27-08-2016", Description: "Amazon - CA", Amount : "$30" }];
+var social_sears_transactions = [{ TDate: "12-09-2016", Description: "Sears - GreatMall", Amount : "$333" },{ TDate: "25-08-2016", Description: "Sears - Hillsdale", Amount : "$30" },{ TDate: "27-08-2016", Description: "Sears - Dublin", Amount : "$200" }];
 
 
-var my_spent_bar_chart=[[Costco, 221.98], [Heinens Supermarket, 83.12], [Foodland, 83.12], [Kroger,76.39], [Publix,59.88], [Wholefoods Market,54.01], [Safeway,29.78]];
-var peers_spent_bar_chart=[[Costco, 121.98], [Heinens Supermarket, 183.12], [Foodland, 83.12], [Kroger,76.39], [Publix,159.88], [Wholefoods Market,54.01], [Safeway, 9.78]];
+var my_spent_bar_chart=[["Costco", 221.98], ["Heinens Supermarket", 83.12], ["Foodland", 83.12], ["Kroger",76.39], ["Publix",59.88], ["Wholefoods Market",54.01], ["Safeway",29.78]];
+var peers_spent_bar_chart=[["Costco", 121.98], ["Heinens Supermarket", 183.12], ["Foodland", 83.12], ["Kroger",76.39], ["Publix",159.88], ["Wholefoods Market",54.01], ["Safeway", 9.78]];

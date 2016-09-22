@@ -12,6 +12,7 @@ $(document).ready(function(){
 	{
 		populateCategoryPieChart(user_name);
 		populateMerchantPieChart(user_name);
+		notification();
 	}
 
 	if( $('.easy-pie-chart').length > 0 ) {
@@ -1683,25 +1684,43 @@ $(document).ready(function(){
 			time: 2000,
 		});
 		
-	var flashMsgSound = new Audio();
-		var offlineSound = new Audio();
+		function notification()
+		{
 
-		if ( navigator.userAgent.match("Firefox/") ) {
-			flashMsgSound.src = "assets/audio/flash-message.ogg";
-			offlineSound.src = "assets/audio/offline.ogg";
-		}else {
-			flashMsgSound.src = "assets/audio/flash-message.mp3";
-			offlineSound.src = "assets/audio/offline.mp3";
+				if(getParameterByName('notify') == 'true')
+				{
+					
+					var flashMsgSound = new Audio();
+					var offlineSound = new Audio();
+
+					if ( navigator.userAgent.match("Firefox/") ) {
+						flashMsgSound.src = "assets/audio/flash-message.ogg";
+						offlineSound.src = "assets/audio/offline.ogg";
+					}else {
+						flashMsgSound.src = "assets/audio/flash-message.mp3";
+						offlineSound.src = "assets/audio/offline.mp3";
+					}
+					
+
+						$.gritter.add({
+							title: 'Purchase at Target',
+							text: 'Hey, Check your new purchase!',
+				
+						});
+						var flashMsgSound = new Audio();
+						flashMsgSound.src = "assets/audio/flash-message.ogg";
+						flashMsgSound.play();
+					
+				}
+			
 		}
-		
-
-			$.gritter.add({
-				title: 'Purchase at Target',
-				text: 'Hey, Check your new purchase!',
-	
-			});
-			var flashMsgSound = new Audio();
-			flashMsgSound.src = "assets/audio/flash-message.ogg";
-			flashMsgSound.play();
-	
+	function getParameterByName(name) {		
+		var url = window.location.href;
+		name = name.replace(/[\[\]]/g, "\\$&");
+		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
 }); // end ready function
