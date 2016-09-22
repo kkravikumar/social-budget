@@ -1598,14 +1598,15 @@ $(document).ready(function(){
 		return "<div style='font-size:8pt; text-align:left; padding:2px; color:black;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
 	}
 	
+
 		// global setting override
 		$.extend( $.gritter.options, {
 			// you can use these params to set global variable that affect all the notications behaviour
 			//class_name: 'gritter-light',
-			//fade_in_speed: 100,
-			//fade_out_speed: 100,
-			//position: 'bottom-right' // possibilities: bottom-left, bottom-right, top-left, top-right
-			time: 1500,
+			fade_in_speed: 1000,
+			fade_out_speed: 500,
+			position: 'top-right', // possibilities: bottom-left, bottom-right, top-left, top-right
+			time: 2000,
 		});
 		
 	var flashMsgSound = new Audio();
@@ -1619,12 +1620,14 @@ $(document).ready(function(){
 			offlineSound.src = "assets/audio/offline.mp3";
 		}
 		
-	$('#gritter-light').click( function() {
+
 			$.gritter.add({
-				title: 'Light Theme!',
-				text: 'If you want the light version, you got it. Just add option class_name: \'gritter-light\' :)',
-				class_name: 'gritter-light',
+				title: 'Purchase at Target',
+				text: 'Hey, Check your new purchase!',
+	
 			});
+			var flashMsgSound = new Audio();
+			flashMsgSound.src = "assets/audio/flash-message.ogg";
 			flashMsgSound.play();
-		});
+	
 }); // end ready function
