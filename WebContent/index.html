@@ -276,17 +276,17 @@
 							<div class="widget-content">
 								<!-- chart tab nav -->
 								<div class="chart-nav">
-									<strong>Select period: </strong>
-									<ul id="sales-stat-tab">
+									<ul id="sales-stat-tab-left">
 										<li class="active"><a href="#month">Monthly</a></li>
 										<li><a href="#quarter">Quarterly</a></li>
 										<li><a href="#half">Half Yearly</a></li>
 										<li><a href="#year">Annually</a></li>
+									</ul>
+									<ul id="sales-stat-tab-right">
 										<li class="active"><a href="#city">City</a></li>
 										<li><a href="#county">County</a></li>
 										<li><a href="#state">State</a></li>
 										<li><a href="#country">Country</a></li>
-										<li><a href="#category"><b>Category</b></a></li>
 									</ul>
 								</div>
 								<!-- end chart tab nav -->
@@ -487,51 +487,38 @@
 									</div>
 								</div>
 								<div class="widget-content">
-									<form class="form-horizontal form-ticket" role="form">
-										<table id="user" class="table table-bordered table-striped">
-											<thead>
-												<tr>
-													<th>Category</th>
-													<th>keyword/Item</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Select2 (tags mode)</td>
-													<td><a href="#" id="tags" data-type="select2" data-pk="1" data-title="Enter tags">html, javascript</a></td>
-												</tr>
-												<tr>
-													<td>Select2 (dropdown mode)</td>
-													<td>
-														<a href="#" id="country" data-type="select2" data-pk="1" data-value="BS" data-title="Select country"></a>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-										<hr class="inner-separator" />
-										<fieldset>
-											<div class="form-group">
-												<label for="ticket-type" class="col-sm-3 control-label">Category</label>
-												<div class="col-sm-9">
-													<select id="multiselect4-filter" name="multiselect4[]" class="multiselect" multiple="multiple">
-														<option value="apparel">APPAREL</option>
-														<option value="restaurant">RESTAURANT</option>
-														<option value="auto">AUTO</option>
-														<option value="grocery">GROCERY</option>
-														<option value="gas">GAS</option>
-													</select>
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="ticket-name" class="col-sm-3 control-label">Keyword/Item Name</label>
-												<div class="col-sm-9">
-													<input type="text" value="Tabla Flavour" data-role="tagsinput">
-												</div>
-											</div>
-										</fieldset>
-										<hr class="inner-separator" />
-										<button type="button" class="btn btn-primary center-block">Set wish lists</button>
-									</form>
+									<table id="user" class="table table-bordered table-striped">
+										<thead>
+											<tr>
+												<th>Category</th>
+												<th>keyword/Item</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Electronics</td>
+												<td><a href="#" id="tags" data-type="select2" data-pk="1" data-title="Enter tags">Television,Play Station</a></td>
+											</tr>
+											<tr>
+												<td>Sports</td>
+												<td>
+													<a href="#" id="country" data-type="select2" data-pk="1" data-value="BS" data-title="Select country"></a>
+												</td>
+											</tr>
+											<tr>
+												<td>Auto</td>
+												<td><a href="#" id="tags" data-type="select2" data-pk="1" data-title="Enter tags">Music System</a></td>
+											</tr>
+											<tr>
+												<td>Home Furnishing</td>
+												<td>
+													<a href="#" id="country" data-type="select2" data-pk="1" data-value="BS" data-title="Select country"></a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<hr class="inner-separator" />
+									<button type="button" class="btn btn-primary center-block">Set wish lists</button>
 								</div>
 							</div>
 							<!-- END WIDGET TASKS -->

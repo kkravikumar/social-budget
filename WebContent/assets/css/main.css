@@ -16192,6 +16192,10 @@ body.sidebar-float .content-wrapper {
   text-decoration: none;
 }
 
+#sales-stat-tab-right li {
+	float:right;
+}
+
 .chart-content {
   margin-bottom: 15px;
 }

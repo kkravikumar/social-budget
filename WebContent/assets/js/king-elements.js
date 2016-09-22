@@ -740,10 +740,5 @@ $(document).ready(function(){
 		$('#markdown-editor').text(toMarkdown(initContent));
 	}
 
-	if( $('.progress-bar').length > 0 ) {
-		$('.progress-bar').click( function() {
-			alert('progress-bar-restaurant');
-		});
-	}
 }); // end ready function
 
