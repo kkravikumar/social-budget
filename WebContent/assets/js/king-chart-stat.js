@@ -1597,4 +1597,34 @@ $(document).ready(function(){
 	function labelFormatter(label, series) {
 		return "<div style='font-size:8pt; text-align:left; padding:2px; color:black;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
 	}
+	
+		// global setting override
+		$.extend( $.gritter.options, {
+			// you can use these params to set global variable that affect all the notications behaviour
+			//class_name: 'gritter-light',
+			//fade_in_speed: 100,
+			//fade_out_speed: 100,
+			//position: 'bottom-right' // possibilities: bottom-left, bottom-right, top-left, top-right
+			time: 1500,
+		});
+		
+	var flashMsgSound = new Audio();
+		var offlineSound = new Audio();
+
+		if ( navigator.userAgent.match("Firefox/") ) {
+			flashMsgSound.src = "assets/audio/flash-message.ogg";
+			offlineSound.src = "assets/audio/offline.ogg";
+		}else {
+			flashMsgSound.src = "assets/audio/flash-message.mp3";
+			offlineSound.src = "assets/audio/offline.mp3";
+		}
+		
+	$('#gritter-light').click( function() {
+			$.gritter.add({
+				title: 'Light Theme!',
+				text: 'If you want the light version, you got it. Just add option class_name: \'gritter-light\' :)',
+				class_name: 'gritter-light',
+			});
+			flashMsgSound.play();
+		});
 }); // end ready function
