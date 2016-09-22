@@ -54,3 +54,7 @@
 .top-bar .logged-user .open .btn {
   color: #7b7b7b;
 }
+.mobile{
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: white;
+}
