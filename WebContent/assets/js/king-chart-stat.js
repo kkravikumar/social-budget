@@ -1617,7 +1617,13 @@ $(document).ready(function(){
 		 			[
 		 				{
 		 					data: myData,
-		 					label: "Mine"
+		 					label: "Mine",
+							lines: {
+									show: true
+							},
+							points:{
+									show:true
+							}
 		 				},
 						{
 		 					data: peerData,
@@ -1634,7 +1640,7 @@ $(document).ready(function(){
 		 				grid: {
 		 					hoverable: true, 
 		 					clickable: true,
-		 					borderWidth: 1,
+		 					borderWidth: 0,
 		 					tickColor: "white",
 							align: "center",
 							autoscaleMargin:0.5
@@ -1675,7 +1681,13 @@ $(document).ready(function(){
 		 			[
 		 				{
 		 					data: myData,
-		 					label: "Peers"
+		 					label: "Peers",
+							lines: {
+									show: true
+							},
+							points:{
+									show:true
+							}
 		 				},
 						{
 		 					data: peerData,
@@ -1692,7 +1704,7 @@ $(document).ready(function(){
 		 				grid: {
 		 					hoverable: true, 
 		 					clickable: true,
-		 					borderWidth: 1,
+		 					borderWidth: 0,
 		 					tickColor: "white",
 							align: "center",
 							autoscaleMargin:0.5
