@@ -30,8 +30,8 @@ var social_sears_transactions = [{ TDate: "12-09-2016", Description: "Sears - Gr
 
 
 var spent_my_bar_chart=[[0, 500.66], [1, 300.12],[2, 100], [3,54.01], [4,30]];
-var spent_peer_bar_chart=[[0, 121.98], [1, 0],[2, 0],  [3,54.01], [4,0]];
+var spent_peer_bar_chart=[[0, 121.98], [1, 0],[2, 0],  [3,70.01], [4,0]];
 
-var visit_peer_bar_chart=[[0, 500.66], [1, 250.12],[2, 200], [3,54.01], [4,40]];
+var visit_peer_bar_chart=[[0, 500.66], [1, 250.12],[2, 200], [3,70.01], [4,40]];
 var visit_my_bar_chart=[[0, 0], [1, 0],[2, 0],  [3,54.01], [4,400]];
 
