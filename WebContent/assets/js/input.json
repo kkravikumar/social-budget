@@ -1,4 +1,4 @@
-var masterpassuser_top_category_donut_chart_data = [{ label: "Travel",  data: 35},{ label: "Eat",  data: 40},{ label: "Shop", data: 50},{ label: "Play", data: 45},{ label: "Hotel",  data: 40}];
+var masterpassuser_top_category_donut_chart_data = [{ label: "Travel",  data: 35},{ label: "Eat",  data: 20},{ label: "Shop", data: 10},{ label: "Play", data: 45},{ label: "Hotel",  data: 80}];
 var masterpassuser_travel_transactions = [{ TDate: "12-09-2016", Description: "kayak", Amount : "$800" },{ TDate: "25-08-2016", Description: "United Airline", Amount : "$600" },{ TDate: "22-08-2016", Description: "MakemyTrip", Amount : "$1000" }];
 var masterpassuser_eat_transactions = [{ TDate: "12-09-2016", Description: "Pizza Hut", Amount : "$200" },{ TDate: "25-08-2016", Description: "Dominos", Amount : "$350" },{ TDate: "22-08-2016", Description: "Burger King", Amount : "$25.76" }];
 var masterpassuser_shop_transactions = [{ TDate: "12-09-2016", Description: "Sears", Amount : "$500" },{ TDate: "25-08-2016", Description: "Nike", Amount : "$140" },{ TDate: "22-08-2016", Description: "Timberland", Amount : "$280" }];
@@ -6,14 +6,14 @@ var masterpassuser_play_transactions = [{ TDate: "12-09-2016", Description: "Toy
 var masterpassuser_hotel_transactions = [{ TDate: "12-09-2016", Description: "Motel 6", Amount : "$280" },{ TDate: "25-08-2016", Description: "Extended Stay", Amount : "$500" },{ TDate: "22-08-2016", Description: "Holiday Inn", Amount : "$300" }];
 
 
-var masterpassuser_top_merchant_donut_chart_data = [{ label: "Netflix",  data: 40},{ label: "CVS",  data: 35},{ label: "Amazon", data: 50},{ label: "Sears", data: 50},{ label: "Rebox",  data: 50}];
+var masterpassuser_top_merchant_donut_chart_data = [{ label: "Netflix",  data: 40},{ label: "CVS",  data: 35},{ label: "Amazon", data: 55},{ label: "Sears", data: 15},{ label: "Rebox",  data: 69}];
 var masterpassuser_rebox_transactions = [{ TDate: "12-09-2016", Description: "Redbox - Belmont", Amount : "$300" },{ TDate: "25-08-2016", Description: "Redbox - LA", Amount : "$250" },{ TDate: "27-08-2016", Description: "Redbox - Newyork", Amount : "$100" }];
 var masterpassuser_netflix_transactions = [{ TDate: "12-09-2016", Description: "Civil war", Amount : "$80" },{ TDate: "25-08-2016", Description: "Unstoppable", Amount : "$50.90" },{ TDate: "27-08-2016", Description: "Avatar", Amount : "$35.41" }];
 var masterpassuser_cvs_transactions = [{ TDate: "12-09-2016", Description: "Traxil", Amount : "$30" },{ TDate: "25-08-2016", Description: "Swester", Amount : "$45" },{ TDate: "27-08-2016", Description: "Pradacate", Amount : "$20" }];
 var masterpassuser_amazon_transactions = [{ TDate: "12-09-2016", Description: "Napkins", Amount : "$5.34" },{ TDate: "25-08-2016", Description: "Plates", Amount : "$3.56" },{ TDate: "27-08-2016", Description: "Towels", Amount : "$30" }];
 var masterpassuser_sears_transactions = [{ TDate: "12-09-2016", Description: "Sweaters", Amount : "$333" },{ TDate: "25-08-2016", Description: "Shoes", Amount : "$30" },{ TDate: "27-08-2016", Description: "T-Shirts", Amount : "$200" }];
 
-var social_top_category_donut_chart_data = [{ label: "Travel",  data: 40},{ label: "Eat",  data: 50},{ label: "Shop", data: 27},{ label: "Play", data: 45},{ label: "Hotel",  data: 40}];
+var social_top_category_donut_chart_data = [{ label: "Travel",  data: 30},{ label: "Eat",  data: 15},{ label: "Shop", data: 27},{ label: "Play", data: 45},{ label: "Hotel",  data: 60}];
 var social_travel_transactions = [{ TDate: "12-09-2016", Description: "kayak", Amount : "$400" },{ TDate: "25-08-2016", Description: "United Airline", Amount : "$500" },{ TDate: "22-08-2016", Description: "MakemyTrip", Amount : "$800" }];
 var social_eat_transactions = [{ TDate: "12-09-2016", Description: "Pizza Hut", Amount : "$30.23" },{ TDate: "25-08-2016", Description: "Dominos", Amount : "$10.34" },{ TDate: "22-08-2016", Description: "Burger King", Amount : "$25.2" }];
 var social_shop_transactions = [{ TDate: "12-09-2016", Description: "Sears", Amount : "$700" },{ TDate: "25-08-2016", Description: "Nike", Amount : "$440" },{ TDate: "22-08-2016", Description: "Timberland", Amount : "$180" }];

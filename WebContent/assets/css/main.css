@@ -15574,7 +15574,7 @@ body.ontop-nav .top-bar .navbar-toggle:hover, body.ontop-nav .top-bar .navbar-to
 /*------------------------------------------------*/
 .content-wrapper {
   padding: 15px 30px;
-  margin-left: 230px;
+  margin-left: 0px;
   position: relative;
 }
 .content-wrapper.expanded {
@@ -20966,12 +20966,12 @@ ul.nav-categories > li > a {
 }
 @media screen and (min-width: 768px) {
   .page-auth .center-block {
-    width: 50%;
+    width: 70%;
   }
 }
 @media screen and (min-width: 992px) {
   .page-auth .center-block {
-    width: 40%;
+    width: 70%;
   }
 }
 
