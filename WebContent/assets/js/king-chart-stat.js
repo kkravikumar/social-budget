@@ -1736,10 +1736,10 @@ $(document).ready(function(){
 		$.extend( $.gritter.options, {
 			// you can use these params to set global variable that affect all the notications behaviour
 			//class_name: 'gritter-light',
-			fade_in_speed: 1000,
-			fade_out_speed: 500,
+			//fade_in_speed: 100,
+			//fade_out_speed: 100,
 			position: 'top-right', // possibilities: bottom-left, bottom-right, top-left, top-right
-			time: 2000,
+			time: 100,
 		});
 		
 		function notification()
@@ -1762,7 +1762,7 @@ $(document).ready(function(){
 
 						$.gritter.add({
 							title: 'Purchase at Target',
-							text: 'Hey, Check your new purchase!',
+							text: 'Hey, Check your new purchase!'
 				
 						});
 						var flashMsgSound = new Audio();
