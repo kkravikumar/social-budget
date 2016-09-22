@@ -155,7 +155,37 @@ $(document).ready(function(){
 			bounds: {min: 0, max: 150},
 			defaultValues: {min: 0, max: 100}
 		});
+		
+		$('#editable-slider-accessories').editRangeSlider({
+			arrows: false,
+			bounds: {min: 0, max: 450},
+			defaultValues: {min: 0, max: 300}
+		});
+		
+		$('#editable-slider-airtravel').editRangeSlider({
+			arrows: false,
+			bounds: {min: 0, max: 1000},
+			defaultValues: {min: 0, max: 700}
+		});
+		
+		$('#editable-slider-hotel').editRangeSlider({
+			arrows: false,
+			bounds: {min: 0, max: 300},
+			defaultValues: {min: 0, max: 200}
+		});
+		
+		$('#editable-slider-homeservices').editRangeSlider({
+			arrows: false,
+			bounds: {min: 0, max: 300},
+			defaultValues: {min: 0, max: 200}
+		});
 
+		$('#editable-slider-sports').editRangeSlider({
+			arrows: false,
+			bounds: {min: 0, max: 200},
+			defaultValues: {min: 0, max: 100}
+		});
+		
 		$('.basic-step-slider').rangeSlider({
 			arrows: false,
 			step: 10
